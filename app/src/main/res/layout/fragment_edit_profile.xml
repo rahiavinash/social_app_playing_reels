@@ -1,0 +1,2763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clProfileAndProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:windowSoftInputMode="adjustResize"
+        tools:context=".mainui.home.editProfile.EditProfileFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+
+                <!-- <TextView
+                     android:id="@+id/tvSeemyFollowers2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="@dimen/_8sdp"
+                     android:layout_marginTop="@dimen/_16sdp"
+                     android:fontFamily="@font/poppins_medium"
+                     android:text="See my Followers"
+                     android:textColor="@color/LightBlack"
+                     android:textSize="@dimen/_11sdp"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/llMylikeGiven" />-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clProfileCardView"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="@dimen/_75sdp"
+                        android:layout_height="@dimen/_75sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="260dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="#e6e6e6"
+                        tools:ignore="MissingConstraints">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/_75sdp"
+                            android:layout_height="@dimen/_75sdp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="250dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#e6e6e6">
+
+                            <ImageView
+                                android:id="@+id/ivUserProfileImage"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="@dimen/_75sdp"
+                               android:src="@drawable/ic_greyuser"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/ivEditImage"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_edit_profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/clProfileCardView"
+                    app:layout_constraintEnd_toEndOf="@+id/clProfileCardView" />
+
+                <LinearLayout
+                    android:id="@+id/llAccountPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clProfileCardView">
+
+                    <RadioGroup
+                        android:id="@+id/rgPrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:textColor="@color/white" />
+
+                        <RadioButton
+                            android:id="@+id/tvPrivate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/radio_selector_black"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/poppins"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:text="Private"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:textColor="@color/white" />
+
+                        <RadioButton
+                            android:id="@+id/tvPublic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/radio_selector_black"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/poppins"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:text="Public"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/white" />
+
+                        <RadioButton
+                            android:id="@+id/tvBusiness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/radio_selector_black"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/poppins"
+                            android:paddingStart="@dimen/_9sdp"
+                            android:text="Business"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:textColor="@color/white" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!--       <LinearLayout
+                           android:id="@+id/llAccountPrivacy"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="@dimen/_15sdp"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toBottomOf="@+id/clProfileCardView">
+
+                           <RadioGroup
+                               android:id="@+id/rgPrivacy"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_gravity="center_horizontal"
+                               android:orientation="horizontal"
+                               app:layout_constraintBottom_toBottomOf="parent"
+                               app:layout_constraintEnd_toEndOf="parent"
+                               app:layout_constraintStart_toStartOf="parent"
+                               app:layout_constraintTop_toTopOf="parent">
+
+                               <RadioButton
+                                   android:id="@+id/tvPrivate"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:background="@color/white"
+                                   android:button="@null"
+                                   android:drawableLeft="@drawable/radio_selector_black"
+                                   android:drawablePadding="@dimen/_4sdp"
+                                   android:fontFamily="@font/poppins"
+                                   android:paddingStart="@dimen/_5sdp"
+                                   android:text="Private"
+                                   android:layout_weight="1"
+                                   android:textColor="@color/LightBlack"
+                                   android:textSize="@dimen/_11sdp"
+                                   app:layout_constraintStart_toStartOf="parent"
+                                   app:layout_constraintTop_toBottomOf="@+id/clProfileCardView" />
+
+                               <RadioButton
+                                   android:id="@+id/tvPublic"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:background="@color/white"
+                                   android:button="@null"
+                                   android:layout_weight="1"
+                                   android:textAlignment="center"
+                                   android:drawableLeft="@drawable/radio_selector_black"
+                                   android:drawablePadding="8dp"
+                                   android:fontFamily="@font/poppins"
+                                   android:paddingStart="@dimen/_5sdp"
+                                   android:text="Public"
+                                   android:textColor="@color/LightBlack"
+                                   android:textSize="@dimen/_11sdp"
+                                   app:layout_constraintBottom_toBottomOf="@+id/tvPrivate"
+                                   app:layout_constraintStart_toEndOf="@+id/tvPrivate"
+                                   app:layout_constraintTop_toTopOf="@+id/tvPrivate" />
+
+                               <RadioButton
+                                   android:id="@+id/tvBusiness"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:background="@color/white"
+                                   android:button="@null"
+                                   android:layout_weight="1"
+                                   android:drawablePadding="8dp"
+                                   android:textAlignment="textEnd"
+                                   android:drawableLeft="@drawable/radio_selector_black"
+                                   android:fontFamily="@font/poppins"
+                                   android:paddingStart="@dimen/_5sdp"
+                                   android:text="Business"
+                                   android:textColor="@color/LightBlack"
+                                   android:textSize="@dimen/_11sdp"
+                                   app:layout_constraintBottom_toBottomOf="@+id/tvPrivate"
+                                   app:layout_constraintEnd_toEndOf="parent"
+                                   app:layout_constraintStart_toEndOf="@+id/tvPrivate"
+                                   app:layout_constraintTop_toTopOf="@+id/tvPrivate" />
+
+
+                           </RadioGroup>
+
+                       </LinearLayout>-->
+
+
+                <TextView
+                    android:id="@+id/tvBio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Bio"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llAccountPrivacy" />
+
+
+                <EditText
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_103sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/background_message_text"
+                    android:gravity="start"
+                    android:hint="@string/add_text_or_links"
+                    android:maxLength="160"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_25sdp"
+                    android:textColor="@color/LightBlack"
+                    android:textColorHint="@color/Grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBio" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMentionList"
+                    android:layout_width="@dimen/_300sdp"
+                    android:layout_height="@dimen/_300sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@color/lightblack"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                    tools:listitem="@layout/mention_list_recycleview" />
+
+                <TextView
+                    android:id="@+id/tvZero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="0"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDescription"
+                    app:layout_constraintEnd_toStartOf="@+id/tvFinalvalue" />
+
+                <TextView
+                    android:id="@+id/tvFinalvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="/160"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDescription"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDescription" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.84" />
+
+                    <TextView
+                        android:id="@+id/tvPrivacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Privacy"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivSettings"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/ivSettings"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_setting"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDownArrow"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivDownArrow"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_arrow_down"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline01"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPrivacyOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clPrivacy">
+
+                    <TextView
+                        android:id="@+id/tvWhocan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Who can:"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTagMe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Tag me"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvWhocan" />
+
+                    <RadioGroup
+                        android:id="@+id/repostToGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTagMe">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:id="@+id/tvCollabwithme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Collab with me"
+                        android:visibility="gone"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/repostToGroup" />
+
+                    <RadioGroup
+                        android:id="@+id/llCollabWithMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCollabwithme">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonCollab"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonCollab"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonCollab"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonCollab"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Message me"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llCollabWithMe" />
+
+                    <RadioGroup
+                        android:id="@+id/llMessageMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMessage">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonMessageMe"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonMessageMe"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonMessageMe"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonMessageMe"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvOnMYProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="On my profile, who can:"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llMessageMe" />
+
+                    <TextView
+                        android:id="@+id/tvOnMyLikeGiven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Likes Given"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOnMYProfile" />
+
+                    <RadioGroup
+                        android:id="@+id/llMylikeReceived"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOnMyLikeGiven">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonMylike"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonMylike"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonMylike"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonMylike"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvOnMyLikeReceived"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Likes Received"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llMylikeReceived" />
+
+                    <RadioGroup
+                        android:id="@+id/llMylikeGiven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOnMyLikeReceived">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonLikeGiven"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonLikeGiven"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonLikeGiven"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonLikeGiven"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvSeemyFollowers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Followers"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llMylikeGiven" />
+
+                    <RadioGroup
+                        android:id="@+id/llSeeMyFollower"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeemyFollowers">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonSeeMyFollower"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonSeeMyFollower"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonSeeMyFollower"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonSeeMyFollower"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:id="@+id/tvSeemyFollowing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Following"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llSeeMyFollower" />
+
+                    <RadioGroup
+                        android:id="@+id/llSeeMyFollowing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeemyFollowing">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonSeeMyFollowing"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonSeeMyFollowing"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonSeeMyFollowing"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonSeeMyFollowing"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:id="@+id/tvSeemyTrees"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Trees"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llSeeMyFollowing" />
+
+                    <RadioGroup
+                        android:id="@+id/llSeeMyTrees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeemyTrees">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonSeeMyTrees"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonSeeMyTrees"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonSeeMyTrees"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonSeeMyTrees"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvSeemyArchives"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Archives"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llSeeMyTrees" />
+
+                    <RadioGroup
+                        android:id="@+id/llSeeMyArchives"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeemyArchives">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonArchives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonArchives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonArchives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonArchives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:id="@+id/tvSeeMyBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Bio"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llSeeMyArchives" />
+
+
+                    <RadioGroup
+                        android:id="@+id/rgSeeMyBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeeMyBio">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonSeeMyBio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonSeeMyBio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonSeeMyBio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonSeeMyBio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvSeeMyProfilePicture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See my Profile Picture"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rgSeeMyBio" />
+
+                    <RadioGroup
+                        android:id="@+id/rgSeeMyProfilePicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/_20sdp"
+                        android:weightSum="4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSeeMyProfilePicture">
+
+
+                        <RadioButton
+                            android:id="@+id/noOneButtonProfilePicture"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="No One"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/friendsButtonProfilePicture"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Friends"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/followerButtonProfilePicture"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="@string/followers"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/EveryoneButtonProfilePicture"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:button="@null"
+                            android:drawableTop="@drawable/radio_selector_black"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:text="Everyone"
+                            android:textColor="#1D1D1D"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@color/unselectedTabColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clPrivacyOption">
+
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAccountAndSecurity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clPrivacyOption">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.84" />
+
+                    <TextView
+                        android:id="@+id/tvAccountSecurity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Account &amp; Security"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivAccountSettings"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/ivAccountSettings"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_setting"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDownArrowAccount"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivDownArrowAccount"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_arrow_down"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAccountOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_20sdp"
+android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clAccountAndSecurity">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.84" />
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/name_of_account"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:background="@drawable/base_background"
+                            android:fontFamily="@font/poppins"
+                            android:hint="@string/enter_name"
+                            android:maxLength="25"
+                            android:textColor="@color/lightblack"
+                            android:paddingStart="@dimen/_14sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_14sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:textColorHint="@color/GreyPasswordColor"
+                            android:textSize="@dimen/_12sdp"
+                            app:boxStrokeWidth="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/username"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+                        <EditText
+                            android:id="@+id/etUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:background="@drawable/base_background"
+                            android:fontFamily="@font/poppins"
+                            android:hint="@string/enter_username"
+                            android:maxLength="20"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-._"
+                            android:paddingStart="@dimen/_14sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_14sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/lightblack"
+                            android:textColorHint="@color/GreyPasswordColor"
+                            android:textSize="@dimen/_12sdp"
+                            app:boxStrokeWidth="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+                        <TextView
+                            android:id="@+id/username_validation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:text=""
+                            android:textColor="#DEDEDE"
+                            android:textSize="@dimen/_10sdp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+                        <TextView
+                            android:id="@+id/tvChangePassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/change_password"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+                        <TextView
+                            android:id="@+id/tvCurrentPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/enter_current_password"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvChangePassword" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/etCurrentPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:focusable="false"
+                            android:inputType="textPassword"
+                            android:textColor="@color/LightBlack"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCurrentPassword"
+                            app:passwordToggleDrawable="@drawable/password_selector"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/LightBlack"
+                            app:rippleColor="@android:color/white">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCurrentPassword2"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/base_background"
+                                android:fontFamily="@font/poppins"
+                                android:hint="@string/current_password"
+                                android:inputType="textPassword"
+
+                                android:paddingStart="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:paddingBottom="@dimen/_4sdp"
+                                android:textColor="@color/LightBlack"
+                                android:textColorHint="@color/GreyPasswordColor"
+                                android:textSize="@dimen/_12sdp"
+                                app:boxStrokeWidth="0dp"
+                                app:errorEnabled="true"
+                                app:rippleColor="@android:color/white" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/tvNewPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/enter_new_password"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etCurrentPassword" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/etNewPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:focusable="false"
+                            android:inputType="textPassword"
+                            android:textColor="@color/LightBlack"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvNewPassword"
+                            app:passwordToggleDrawable="@drawable/password_selector"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/LightBlack"
+                            app:rippleColor="@android:color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNewPassword2"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/base_background"
+                                android:fontFamily="@font/poppins"
+                                android:hint="@string/new_password"
+                                android:inputType="textPassword"
+                                android:paddingStart="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_4sdp"
+                                android:textColor="@color/LightBlack"
+                                android:textColorHint="@color/GreyPasswordColor"
+                                android:textSize="@dimen/_12sdp"
+                                app:boxStrokeWidth="0dp"
+                                app:errorEnabled="true"
+                                app:rippleColor="@android:color/white" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/tvConfirmPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/confirm_new_password"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etNewPassword" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/etConfirmPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:focusable="false"
+                            android:inputType="textPassword"
+                            android:textColor="@color/LightBlack"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword"
+                            app:passwordToggleDrawable="@drawable/password_selector"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/LightBlack"
+                            app:rippleColor="@android:color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etConfirmPassword2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/base_background"
+                                android:fontFamily="@font/poppins"
+                                android:hint="@string/new_password"
+                                android:inputType="textPassword"
+                                android:paddingStart="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_4sdp"
+                                android:textColor="@color/LightBlack"
+                                android:textColorHint="@color/GreyPasswordColor"
+                                android:textSize="@dimen/_12sdp"
+                                app:boxStrokeWidth="0dp"
+                                app:errorEnabled="true"
+                                app:rippleColor="@android:color/white" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/tvWrongPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/passwords_do_not_match"
+                            android:textColor="@color/DarkColor"
+                            android:textSize="@dimen/_7sdp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />
+
+                        <TextView
+                            android:id="@+id/tvRecoverCode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/LightBlack"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvWrongPassword" />
+
+                        <EditText
+                            android:id="@+id/etRecoverCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/black_border_background"
+                            android:focusable="false"
+                            android:fontFamily="@font/poppins"
+                            android:inputType="none"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/GreyPasswordColor"
+                            android:textSize="@dimen/_12sdp"
+                            app:boxStrokeWidth="0dp"
+                            app:errorEnabled="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvRecoverCode"
+                            app:rippleColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/tvCodeCopy"
+                            android:layout_width="@dimen/_105sdp"
+                            android:layout_height="@dimen/_23sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:background="@color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            android:paddingTop="1dp"
+                            android:text="@string/copy_code"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/etRecoverCode" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@color/unselectedTabColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clAccountOption">
+
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_26sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clAccountOption">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.845" />
+
+                    <TextView
+                        android:id="@+id/tvNotification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/notifications"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivNotificationSettings"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNotificationSettings"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_setting"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDownArrowNotification"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivDownArrowNotification"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:src="@drawable/ic_arrow_down"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/NotificationOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clNotification">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/choose_the_push_notifications_you_would_like_to_receive"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/llFollowRequest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:orientation="vertical"
+                        android:weightSum="4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                        <LinearLayout
+                            android:id="@+id/rgFollow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:fontFamily="@font/poppins"
+                                android:paddingEnd="8dp"
+                                android:text="@string/follow_requests"
+                                android:textColor="@color/LightBlack" />
+
+                            <CheckBox
+                                android:id="@+id/rbFollowRequest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:background="@color/white"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/radio_selector_black"
+                                android:drawablePadding="@dimen/_4sdp"
+                                android:paddingStart="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlLine1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@color/bottomsheet_bg_color">
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/anyone"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvAllAnyOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:fontFamily="@font/poppins"
+                                android:text="@string/all"
+                                android:textColor="@color/appBlue"
+                                android:textSize="@dimen/_11sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rgAnyone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_weight="4"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Liked my post"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/AnyoneLiked"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/commented"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckCommented"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+
+                                    android:text="Tagged me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckTagMe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/mentioned_me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckMentioned"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlLine2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@color/bottomsheet_bg_color">
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/my_friends"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvAllMyFriends"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:fontFamily="@font/poppins"
+                                android:text="All"
+                                android:textColor="@color/appBlue"
+                                android:textSize="@dimen/_11sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rgMyFriends"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Liked my post"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/AnyoneLikedMyFriend"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Commented"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckCommentedMyFriend"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:paddingEnd="8dp"
+                                    android:text="Tagged me" />
+
+                                <CheckBox
+                                    android:id="@+id/ckTaggedMeFriends"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Mentioned me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckMentionedFriends"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlLine3"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@color/bottomsheet_bg_color">
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Accounts I Follow"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvAllFollow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:fontFamily="@font/poppins"
+                                android:text="@string/all"
+                                android:textColor="@color/appBlue"
+                                android:textSize="@dimen/_11sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rgAccountsFollow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/liked_my_post"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/AnyoneLikedAccountFollow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/commented"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckCommentedFollow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/tagged_me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckTaggedMeFollow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/mentioned_me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckMentionedFollow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlLine4"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@color/bottomsheet_bg_color">
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/my_followers"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvAllFollowers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:fontFamily="@font/poppins"
+                                android:text="All"
+                                android:textColor="@color/appBlue"
+                                android:textSize="@dimen/_11sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rgAccountsFollowers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="@string/liked_my_post"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/AnyoneLikedAccountFollower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Commented"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckCommentedFollower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Tagged me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckTaggedMeFollower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingEnd="8dp"
+                                    android:text="Mentioned me"
+                                    android:textColor="@color/LightBlack" />
+
+                                <CheckBox
+                                    android:id="@+id/ckMentionedFollower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.1"
+                                    android:background="@color/white"
+                                    android:button="@null"
+                                    android:drawableLeft="@drawable/radio_selector_black"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:paddingStart="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlLine5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@color/bottomsheet_bg_color">
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="@string/but_show_all_in_notification_centre"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/PushOnOffSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_19sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:foreground="@null"
+                                android:thumb="@drawable/thumbs"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:thumbTint="@color/white"
+                                app:track="@drawable/custom_track"
+                                app:trackTint="@color/appBlue" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/IvBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/profile_amp_privacy"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clBottombar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_78sdp"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvWedo"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="@color/black"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#e6e6e6">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/app_logo"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvWedoRespect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/your_privacy_respected"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cvWedo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cvWedo"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/blue_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

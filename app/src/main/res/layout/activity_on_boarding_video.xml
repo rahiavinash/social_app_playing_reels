@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/pureBlack"
+        android:layout_height="match_parent"
+        tools:context=".mainui.activities.OnBoardingVideoActivity">
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+
+        <LinearLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:weightSum="5"
+            android:background="@color/whiteBlur">
+
+            <LinearLayout
+                android:id="@+id/homeTab"
+                android:layout_width="0dp"
+                android:paddingTop="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/homeImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/white"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:id="@+id/homeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/pureWhite"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/home" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/x_changeTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/x_changeImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_x_change" />
+
+                <TextView
+                    android:id="@+id/x_changeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="visible"
+                    android:textColor="@color/pureWhite"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/uploadTab"
+                android:layout_width="0dp"
+                android:paddingTop="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/uploadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/unselectedColor"
+                    android:src="@drawable/ic_upload" />
+
+                <TextView
+                    android:id="@+id/uploadTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="visible"
+                    android:textColor="@color/pureWhite"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/messagingTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/messagingImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_message"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/unselectedColor" />
+
+                    <TextView
+                        android:id="@+id/tvNotification"
+                        android:layout_width="23dp"
+                        android:layout_height="21dp"
+                        android:background="@drawable/notification_count_background"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_1sdp"
+                        android:paddingTop="@dimen/_1sdp"
+                        android:paddingEnd="@dimen/_1sdp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_7sdp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/messagingImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/messagineTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_marginTop="-6dp"
+                    android:visibility="visible"
+                    android:textColor="@color/pureWhite"
+
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profileTab"
+                android:layout_width="0dp"
+                android:paddingTop="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImg"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    app:tint="@color/unselectedColor"
+                    android:src="@drawable/ic_greyuser" />
+
+                <TextView
+                    android:id="@+id/profileTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="visible"
+                    android:textColor="@color/pureWhite"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

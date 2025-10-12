@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mainui.home.profiletab.likeGivenAndReceive.LikeGivenAndReceiveFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".mainui.home.postFragment.SearchFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glVerticalStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glVerticalEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+                app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/_42sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_21sdp"
+                    android:src="@drawable/ic_back_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Likes"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="@+id/tab_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tab_layout">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glVerticalMed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.50" />
+
+                <TextView
+                    android:id="@+id/tvGivenTab"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="bottom"
+                    android:text="Given"
+                    android:textAlignment="center"
+                    android:textColor="@color/LightBlack"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/glVerticalMed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivGivenBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="3dp"
+android:scaleType="fitXY"
+                    android:src="@drawable/ic_like_background_bar"
+                    app:layout_constraintEnd_toStartOf="@+id/glVerticalMed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGivenTab" />
+
+                <TextView
+                    android:id="@+id/tvReceiveTab"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="bottom"
+                    android:text="Received"
+                    android:textAlignment="center"
+                    android:textColor="@color/Grey"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/glVerticalMed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlCompat" />
+
+                <ImageView
+                    android:id="@+id/ivReceivedBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="3dp"
+                    android:visibility="gone"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_like_background_bar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/glVerticalMed"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReceiveTab" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:alpha="0"
+                app:tabIndicatorColor="@color/transparent"
+                app:tabRippleColor="@color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+                app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+                app:layout_constraintStart_toEndOf="@id/glVerticalStart" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

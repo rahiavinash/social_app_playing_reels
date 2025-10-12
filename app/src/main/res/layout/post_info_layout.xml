@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:background="@drawable/btn_bg"
+        android:backgroundTint="@color/bottomsheet_bg_color">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/post_info"
+            android:textColor="@color/pureWhite"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_cancel_btn"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/pureWhite"/>
+
+        <TextView
+            android:id="@+id/tv_allow_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_label"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/allow_others_to"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+
+            app:layout_constraintTop_toBottomOf="@id/tv_label"
+            app:layout_constraintStart_toEndOf="@id/tv_allow_other"
+            app:layout_constraintEnd_toStartOf="@id/tv_download"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/comment"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/tv_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+
+            app:layout_constraintTop_toBottomOf="@id/tv_label"
+            app:layout_constraintEnd_toStartOf="@id/iv_cancel_btn"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/download"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/tv_see_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_comment"
+            app:layout_constraintStart_toStartOf="@id/tv_comment"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/see_likes"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/tv_posted_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_see_likes"
+            app:layout_constraintEnd_toEndOf="@id/tv_allow_other"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/posted_for"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/tv_account_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_see_likes"
+            app:layout_constraintStart_toStartOf="@id/tv_see_likes"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/public_account"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/tv_disappears_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_type"
+            app:layout_constraintEnd_toEndOf="@id/tv_posted_for"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/disappear_in"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/tv_disappears_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_type"
+            app:layout_constraintStart_toStartOf="@id/tv_see_likes"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/disappear_in"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/tv_date_posted_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_disappears_time"
+            app:layout_constraintEnd_toEndOf="@id/tv_posted_for"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/date_posted"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/tv_date_posted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_disappears_time"
+            app:layout_constraintStart_toStartOf="@id/tv_see_likes"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/disappear_in"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

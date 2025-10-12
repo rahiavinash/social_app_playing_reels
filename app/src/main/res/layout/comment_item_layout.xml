@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="commentData"
+            type="com.wedo8020.app.response.Comment" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/clOpenChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_7sdp">
+
+    <com.apachat.swipereveallayout.core.SwipeLayout
+        android:id="@+id/SwipeReveal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dragEdge="right"
+        app:mode="same_level">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlSwipePinButton"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:background="@drawable/red_color_background"
+                android:backgroundTint="@color/bottomsheet_bg_color"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/pin"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/ic_pin"/>
+
+
+                <TextView
+                    android:id="@+id/pinComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pin" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlSwipeReportButton"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:background="@drawable/red_color_background"
+                android:backgroundTint="@color/bottomsheet_bg_color"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/report"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:padding="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:tint="@color/pureWhite"
+                    android:src="@drawable/ic_flag"/>
+
+
+                <TextView
+                    android:id="@+id/tv_report"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Report"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/report" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlSwipeDeleteButton"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:background="@drawable/red_color_background"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/delete"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/ic_delete"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:text="Delete"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/delete" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_13sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:background="@color/black">
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            android:id="@+id/userCommentDetail"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:src="@drawable/profile_dummy"
+                bind:imageUrl="@{commentData.creator.profile}"
+                android:scaleType="centerCrop" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_7sdp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="vertical">
+                    <TextView
+
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:includeFontPadding="false"
+                        android:text="@{commentData.creator.username}"
+                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/pureWhite" />
+                    <LinearLayout
+                        android:id="@+id/datePinContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/dateCreated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:includeFontPadding="false"
+                            android:layout_marginVertical="@dimen/_1sdp"
+                            android:textColor="@color/Grey"
+                            android:textSize="@dimen/_10sdp"/>
+                        <ImageView
+                            android:id="@+id/pinnedComment"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:src="@drawable/ic_pin"
+                            android:visibility="gone"
+                            app:tint="@color/Grey"
+                            android:layout_marginStart="@dimen/_3sdp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:gravity="center"
+                   android:layout_marginEnd="@dimen/_10sdp"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:orientation="vertical">
+
+                   <ImageView
+                       android:id="@+id/likeBtn"
+                       android:layout_width="@dimen/_18sdp"
+                       android:layout_height="23dp" />
+                   <TextView
+                       android:id="@+id/totalLike"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/poppins"
+                       android:text=""
+
+                       android:includeFontPadding="false"
+                       android:textColor="@color/Grey"
+                       android:textSize="@dimen/_10sdp"/>
+               </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/commentTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/userCommentDetail"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/Grey"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/comment_demo"/>
+
+        <TextView
+            android:id="@+id/replyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+
+            android:text="@string/reply"
+            android:paddingTop="@dimen/_1sdp"
+            android:layout_marginVertical="@dimen/_1sdp"
+            android:textColor="@color/Grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/moreRepliesBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toBottomOf="@id/commentTxt"
+
+            />
+        <LinearLayout
+            android:id="@+id/moreRepliesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50sdp"
+            app:layout_constraintStart_toEndOf="@id/replyBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toBottomOf="@id/commentTxt">
+            <TextView
+                android:id="@+id/moreRepliesTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/_200_replies"
+                android:paddingTop="@dimen/_1sdp"
+                android:layout_marginVertical="@dimen/_1sdp"
+                android:textColor="@color/Grey"
+                android:textSize="@dimen/_10sdp"/>
+            <ImageView
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="@dimen/_9sdp"
+                android:rotation="270"
+                android:layout_gravity="center"
+                app:tint="@color/Grey"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:src="@drawable/ic_back_arrow_white"/>
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </com.apachat.swipereveallayout.core.SwipeLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/moreRepliesContainer"
+            android:visibility="gone"
+            android:transformPivotX="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/moreRepliesBtn"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart">
+            <ImageView
+                android:id="@+id/topTriangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="-90"
+                android:src="@drawable/more_reply_triangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.749"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/bottomsheet_bg_color" />
+            <LinearLayout
+                android:id="@+id/moreRepliesRecyclerViewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                app:layout_constraintTop_toBottomOf="@id/topTriangle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/logout_background"
+                android:backgroundTint="@color/bottomsheet_bg_color">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/moreRepliesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:nestedScrollingEnabled="false"
+
+                    app:layout_constraintTop_toBottomOf="@+id/replyBtn"
+                    app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+                    app:layout_constraintEnd_toStartOf="@id/glVerticalEnd" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

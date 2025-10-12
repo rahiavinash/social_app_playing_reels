@@ -1,0 +1,51 @@
+trigger:
+  branches:
+    include:
+      - none
+
+name: WeDo80_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+stages:
+
+  - stage: 'Android_AAB'
+    pool:
+      vmImage: 'macos-13'
+    variables:
+    - group: Android-Variable-Group-X
+    - group: release-version-android
+
+    jobs:
+    - job: 'Build_Android_AAB'
+      dependsOn: []
+      # condition: succeeded('')
+      steps:
+      - template: 'android-aab.yml'
+
+  - stage: 'Android_APK'
+    pool:
+      vmImage: 'macos-13'
+    variables:
+    - group: Android-Variable-Group
+    - group: release-version-android
+
+    jobs:
+    - job: 'Build_Android_APK'
+      dependsOn: []
+      # condition: succeeded('')
+      steps:
+      - template: 'android-apk.yml'
+
+  - stage: 'UpdateBundle'
+    pool:
+      vmImage: 'macos-latest'
+    variables:
+    - group: release-version-android
+    dependsOn: 
+    - Android_AAB
+    - Android_APK
+    jobs:
+      - job: 'UpdateBundle'
+        # Increment Bundle number
+        steps:
+        - checkout: none
+        - template: 'update-bundle.yml'

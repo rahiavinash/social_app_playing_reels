@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plant_tree_background"
+    tools:context=".mainui.home.exchangescreen.PlantTreesFragment">
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/back"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"/>
+
+    <TextView
+        android:id="@+id/more_info_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:text="@string/more_info_text"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_172sdp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/plant_trees_background_image_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/more_info_button">
+
+        <TextView
+            android:id="@+id/buyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plant"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/one_src"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1 Tree"
+            android:textColor="@color/green"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nine_dollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="₹ 199.00"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/poppins"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/one_tree_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/start_guideline"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/end_guideline"-->
+<!--        android:background="@drawable/one_tree_button"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/more_info_button"-->
+<!--        android:layout_marginTop="@dimen/_15sdp"-->
+<!--        android:text="@string/one_tree_text"-->
+<!--        android:textColor="@color/green"-->
+<!--        android:textSize="@dimen/_15sdp"-->
+<!--        android:gravity="center"/>-->
+
+    <TextView
+        android:id="@+id/thousand_bonus_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/bonus_1000_text"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/pureWhite"/>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/five_tree_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/start_guideline"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/end_guideline"-->
+<!--        android:background="@drawable/five_tree_button"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/thousand_bonus_text"-->
+<!--        android:layout_marginTop="@dimen/_20sdp"-->
+<!--        android:text="@string/five_trees_text"-->
+<!--        android:textColor="@color/green"-->
+<!--        android:textSize="@dimen/_15sdp"-->
+<!--        android:gravity="center"/>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_one"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/plant_trees_background_image_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/thousand_bonus_text">
+
+        <TextView
+            android:id="@+id/buy_text_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plant"
+            android:textColor="@color/pureWhite"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/five_src"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/green"
+            android:text="5 Trees"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/one_two_dollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="₹ 799.00"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/ten_thousand_bonus_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/bonus_10_000_text"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_one"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/pureWhite"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/ten_tree_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/start_guideline"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/end_guideline"-->
+<!--        android:background="@drawable/ten_tree_button"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/ten_thousand_bonus_text"-->
+<!--        android:layout_marginTop="@dimen/_20sdp"-->
+<!--        android:text="@string/ten_trees_text"-->
+<!--        android:textColor="@color/green"-->
+<!--        android:textSize="@dimen/_15sdp"-->
+<!--        android:gravity="center"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_two"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/plant_trees_background_image_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ten_thousand_bonus_text">
+
+        <TextView
+            android:id="@+id/buy_text_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:fontFamily="@font/poppins"
+            android:text="Plant"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ten_src"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="10 Trees"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nine_nine_nine_seven_nine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="₹ 1,499.00"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/fifty_thousand_bonus_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/bonus_50_000_text"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_two"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/pureWhite"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".mainui.home.profilesetting.DeleteFragment">
+        <ScrollView
+            android:id="@+id/ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clbar">
+
+            <TextView
+                android:id="@+id/tvMainDeleteAcc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="@dimen/_100sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:text="All your account data will be \npermanently deleted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMainDeleteAcc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/LightGreyText"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textAlignment="center"
+                android:text="This includes your:\nProfile\nFriends\nFollowers\nFollowing\nVideos\nPhotos\nComments\nLikes\nSaved posts\nSaved sounds\nArchives\nPoints\ne trees\nActivity statistics\nAll X-Change data"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMainDeleteAcc1" />
+
+            <TextView
+                android:id="@+id/tvMainDeleteAcc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="If you do not sign in to your account for \nthe next 30 days, it will be \npermanently deleted."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMainDeleteAcc2" />
+
+            <TextView
+                android:id="@+id/tvAreYouSure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/LightGreyText"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_23sdp"
+                android:gravity="center"
+                android:text="Are you sure you want to Delete \nyour Account?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMainDeleteAcc3" />
+
+
+            <TextView
+                android:id="@+id/tvDeleteButton"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_41sdp"
+                android:layout_marginEnd="@dimen/_41sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:background="@drawable/deleted_background"
+                android:layout_marginTop="@dimen/_37sdp"
+         android:layout_marginBottom="@dimen/_50sdp"
+                android:text="Delete Account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAreYouSure" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_38sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/IvSetting"
+                android:layout_width="@dimen/_21sdp"
+                android:layout_height="@dimen/_21sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:src="@drawable/ic_back_arrow"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Delete Account"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

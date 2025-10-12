@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:id="@+id/mainLayout1"
+    android:orientation="vertical">
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:background="@android:color/transparent"
+        android:id="@+id/view"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_below="@+id/view"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_sheet_background">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+        <!--    <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_bias="0"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+                app:layout_constraintTop_toTopOf="parent"
+                >-->
+
+
+
+
+        <ProgressBar
+            android:id="@+id/loadingPB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@drawable/custom_progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_dialog_cancel"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="@id/label"
+            app:layout_constraintBottom_toBottomOf="@id/label"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            android:src="@drawable/ic_cross"
+            app:tint="@color/pureWhite"
+            android:elevation="@dimen/_2sdp"/>
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:includeFontPadding="false"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintBottom_toTopOf="@id/reply_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label">
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedSV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/commentList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clipToPadding="true"
+
+                        android:paddingBottom="@dimen/_20sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/comment_item_layout" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nested_hashtagMentionListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--  <androidx.core.widget.NestedScrollView
+                  android:id="@+id/nested_hashtagMentionList"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+
+
+                  android:overScrollMode="never"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hashtagMentionListContainer"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/black">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hashtagMentionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clipToPadding="true"
+
+                    android:paddingBottom="@dimen/_70sdp"
+
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:listitem="@layout/mention_list_recycleview" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--        </androidx.core.widget.NestedScrollView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--  <androidx.core.widget.NestedScrollView
+              android:id="@+id/nested_hashtagMentionListContainer"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/_minus20sdp"
+
+              app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+              app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+              app:layout_constraintBottom_toTopOf="@id/reply_container">
+              <androidx.constraintlayout.widget.ConstraintLayout
+                  android:id="@+id/hashtagMentionListContainer"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/bottom_sheet_background"
+                  android:paddingBottom="@dimen/_25sdp"
+
+                  app:backgroundTint="@color/bottomsheet_bg_color"
+
+               >
+                  <androidx.recyclerview.widget.RecyclerView
+                      android:id="@+id/hashtagMentionList"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:visibility="gone"
+                      android:nestedScrollingEnabled="false"
+                      app:layout_constraintHeight_max="@dimen/_200sdp"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      />
+              </androidx.constraintlayout.widget.ConstraintLayout>
+          </androidx.core.widget.NestedScrollView>-->
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_container"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:paddingVertical="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            app:layout_constraintBottom_toTopOf="@id/search_container">
+            <ImageView
+                android:id="@+id/iv_reply_cancel"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_cross"
+                app:tint="@color/pureWhite"
+                android:elevation="@dimen/_2sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_reply_to"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/pureWhite"
+                android:text="@string/replying_to"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_20sdp"
+            android:background="@color/pureBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/searchCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardBackgroundColor="@color/bottomsheet_bg_color"
+                app:cardCornerRadius="@dimen/_30sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp">
+
+                    <EditText
+                        android:id="@+id/commentEt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/poppins"
+                        android:hint="@string/add_comment"
+                        android:includeFontPadding="false"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:paddingHorizontal="@dimen/_7sdp"
+                        android:paddingVertical="@dimen/_9sdp"
+                        android:textColor="@color/pureWhite"
+                        android:textColorHint="@color/Grey"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/postBtn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/postBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Post"
+                        android:textColor="@color/appBlue"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

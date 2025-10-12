@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clHashTagList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black">
+
+
+    <TextView
+        android:id="@+id/hash_tag_view"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:text="@string/hash_tag_design"
+        android:textSize="@dimen/_40sdp"
+        android:gravity="center"
+        android:textColor="@color/appBlue"/>
+
+    <TextView
+        android:id="@+id/hash_tag_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/hash_tag_view"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="@string/hash_tag_text_view"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintWidth_max="wrap"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

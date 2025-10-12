@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WeDo80" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+
+        <item name="colorPrimaryDark">@color/black</item>
+
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Base.Theme.WeDo80" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <style name="AppTheme_BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+    </style>
+</resources>

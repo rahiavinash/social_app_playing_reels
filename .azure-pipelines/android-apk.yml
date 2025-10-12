@@ -1,0 +1,81 @@
+  steps:
+  - checkout: self
+    persistCredentials: true
+    clean: true
+
+  - task: DownloadSecureFile@1
+    displayName: 'Download Android Signing file'
+    name: downloadFile
+    inputs:
+      secureFile: 'wedo8020-key.jks'
+
+  - task: CopyFiles@2
+    displayName: 'Copy Store File for Android Signing'
+    name: copyFile
+    inputs:
+      SourceFolder: $(Agent.TempDirectory) #$(downloadFile.secureFilePath)
+      Contents: '*.keystore' #secureFile
+      TargetFolder: 'android/app'
+
+# Update Versions
+  - task: Bash@3
+    displayName: 'Change VersionCode, VersionName, and PackageName'
+    inputs:
+      workingDirectory: 'app/'
+      targetType: 'inline'
+      script: |
+        echo 'Change VersionCode, VersionName, and PackageName'
+        NEW_CODE=$(BundleVersion)
+        NEW_NAME=$(BundleShortVersionString)
+        echo "Name $NEW_NAME - Code $NEW_CODE"
+        ls -l
+        FILE_NAME=build-template.gradle
+        echo "New name: $FILE_NAME"
+        sed -i '' "s/versionCode \$versionCode/versionCode $NEW_CODE/" "$FILE_NAME"
+        sed -i '' "s/versionName \"\$versionName\"/versionName \"$NEW_NAME\"/" "$FILE_NAME"
+        # echo "After $FILE_NAME"
+        # cat $FILE_NAME
+        echo 'Updating build.gradle'
+        ls -lh
+        rm ./build.gradle
+        mv ./build-template.gradle "./build.gradle"
+        ls -lh
+    enabled: true
+
+  - task: Gradle@2
+    displayName: 'Build APK'
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      options: '-PversionName=$(BundleShortVersionString) -PversionCode=$(BundleVersion)'
+      tasks: 'assembleRelease'
+      publishJUnitResults: false
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.17'
+      gradleOptions: '-Xmx3072m'
+      sonarQubeRunAnalysis: false
+
+  - task: AndroidSigning@3
+    displayName: 'Sign APK'
+    inputs:
+      apkFiles: 'app/build/outputs/apk/release/*.apk'
+      apksignerKeystoreFile: 'wedo8020-key.jks'
+      apksignerKeystorePassword: '$(KeyStorePassword)'
+      apksignerKeystoreAlias: '$(KeyAlias)'
+      apksignerKeyPassword: '$(KeyAliasPassword)'
+      zipalign: true
+
+
+  - bash: |
+      echo 'Renaming the APK File to wedo80.apk'
+      mv ./*.apk "./wedo80.apk"
+      ls -lh
+    workingDirectory: 'app/build/outputs/apk/release/'
+    displayName: 'Rename APK'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish APK to artifacts'
+    inputs:
+      PathtoPublish: 'app/build/outputs/apk/release/wedo80.apk'
+      ArtifactName: 'Android-APK'
+      publishLocation: 'Container'

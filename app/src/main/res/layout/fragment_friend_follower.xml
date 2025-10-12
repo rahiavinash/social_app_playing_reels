@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".mainui.home.profiletab.friendFollowerFollowing.FriendFollowerFragment">
+
+        <ImageView
+            android:id="@+id/IvSetting"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_9sdp"
+            android:paddingBottom="@dimen/_9sdp"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTabText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/PureGrey"
+            android:textSize="@dimen/_14sdp"
+
+            android:layout_marginStart="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/IvSetting"
+            app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:alpha="0"
+            android:background="@color/pureWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:toolbarId="@+id/toolbar">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:textSize="@dimen/_14sdp"
+                app:tabTextAppearance="@style/CustomTabLayoutText"
+                android:background="@color/pureWhite"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorColor="@color/transparent"
+                app:tabRippleColor="@color/transparent" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </LinearLayout>
+
+
+        <!--    <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                tools:listitem="@layout/blocked_recycleview"
+                android:layout_margin="@dimen/_7sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edSearch" />
+
+            <TextView
+                android:id="@+id/tvNoBlocked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="You have not blocked \nany accounts"
+                android:textColor="@color/Grey"
+                android:textSize="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_80sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edSearch" />-->
+        <!-- <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/clbar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/white"
+             android:paddingBottom="@dimen/_5sdp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent">
+
+             <ImageView
+                 android:id="@+id/IvSetting"
+                 android:layout_width="@dimen/_30sdp"
+                 android:layout_height="@dimen/_30sdp"
+                 android:paddingBottom="@dimen/_9sdp"
+                 android:paddingEnd="@dimen/_9sdp"
+                 android:layout_marginTop="@dimen/_10sdp"
+                 android:layout_marginStart="@dimen/_5sdp"
+                 android:src="@drawable/ic_back_arrow"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
+
+            &lt;!&ndash; <TextView
+                 android:id="@+id/tvTabText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:fontFamily="@font/poppins_medium"
+                 android:text="@string/restricted_blocked_reported"
+                 android:layout_marginTop="@dimen/_11sdp"
+                 android:textColor="@color/unselectedColor"
+                 android:textSize="@dimen/_14sdp"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;
+
+
+         </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clReceiveMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <com.apachat.swipereveallayout.core.SwipeLayout
+            android:id="@+id/SwipeReveal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dragEdge="left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mode="same_level">
+
+            <LinearLayout
+                android:id="@+id/rlSwipeDeleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00000000">
+
+                <ImageView
+                    android:id="@+id/deleteMsg"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_reply_back" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/messageLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="60dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/llDocumentImage"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="@dimen/_110sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlSymmetry">
+
+                        <ImageView
+                            android:id="@+id/documentImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_excel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/downloadIcon"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:padding="@dimen/_30sdp"
+                            android:src="@drawable/ic_file_download"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clReceiver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llDocumentImage">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clReply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvSendReply"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/reply_blackground"
+                                android:fontFamily="@font/poppins"
+                                android:paddingStart="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_8sdp"
+                                android:paddingEnd="@dimen/_13sdp"
+                                android:paddingBottom="@dimen/_8sdp"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clSendReplyMainMessage"
+                                app:layout_constraintWidth_min="115dp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clSendReplyMainMessage"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/reply_background"
+                                android:backgroundTint="@color/appBlue"
+                                android:drawableStart="@drawable/ic_reply"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins"
+                                android:maxLines="1"
+                                android:paddingBottom="@dimen/_1sdp"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="@dimen/_10sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/tvSendReply"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_min="115dp">
+
+                                <TextView
+                                    android:id="@+id/tvSendReplyMainMessage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_25sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:maxLines="1"
+                                    android:textColor="@color/pureWhite"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:id="@+id/llReplyImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/imageView2"
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:src="@drawable/ic_reply"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <ImageView
+                                        android:id="@+id/ivReplyPostImage"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_7sdp"
+                                        android:padding="@dimen/_2sdp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/tvSendReplyMainMessage"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/ivReplyImage"
+                                        android:layout_width="50dp"
+                                        android:layout_height="59dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="17.5dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/profile_dummy"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="@+id/tvSendReplyMainMessage"
+                                        app:layout_constraintStart_toEndOf="@+id/ivReplyPostImage"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+                                </LinearLayout>
+                                <!--<ImageView
+                                    android:id="@+id/imageView2"
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:src="@drawable/ic_reply"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvSendReplyMainMessage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:maxLines="1"
+                                    android:textColor="@color/pureWhite"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivReplyPostImage"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_45sdp"
+                                    android:scaleType="centerCrop"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivReplyImage"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/ivReplyPostImage"
+                                    app:layout_constraintTop_toTopOf="parent" />-->
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/relativeLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_marginTop="5dp"
+                            android:ellipsize="end"
+                            android:paddingEnd="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvUserMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/backgroundsearch"
+                                android:fontFamily="@font/poppins"
+                                android:paddingStart="@dimen/_13sdp"
+                                android:paddingTop="@dimen/_8sdp"
+                                android:paddingEnd="@dimen/_13sdp"
+                                android:paddingBottom="@dimen/_8sdp"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_min="115dp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/reactionLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="-4dp"
+                        android:background="@drawable/reaction_white_background"
+                        android:elevation="1dp"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clReceiver">
+
+                        <TextView
+                            android:id="@+id/emoji1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="😜"
+                            android:textColor="#fff"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/emoji2"
+                            android:layout_width="25dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="😜"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/messageLayout"
+                        android:layout_alignEnd="@+id/messageLayout"
+                        android:fontFamily="@font/poppins"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clReceiver" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvDeleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_13sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:text="Deleted"
+                    android:textColor="@color/pureWhite"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_min="115dp" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:textColor="@color/Grey2"
+                    android:textSize="@dimen/_11sdp" />
+            </RelativeLayout>
+        </com.apachat.swipereveallayout.core.SwipeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

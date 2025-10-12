@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#505050"
+    tools:context=".mainui.home.exchangescreen.SpecificCountryTreePlanting">
+
+
+    <TextView
+        android:id="@+id/plantingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="You're planting"
+        android:textColor="#A9A9A9"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <ImageView
+        android:id="@+id/cross_button"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:src="@drawable/ic_closewhite"/>
+
+    <TextView
+        android:id="@+id/trees_planted_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="1 Tress"
+        app:layout_constraintTop_toBottomOf="@id/plantingText"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"/>
+
+    <TextView
+        android:id="@+id/choose_country_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Choose Country"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/trees_planted_number"
+        android:textColor="@color/white"/>
+
+
+    <TextView
+        android:id="@+id/long_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Only countries with open projects through one of the organisations we support are shown below"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_country_text"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="#A9A9A9"/>
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/long_text"
+        android:background="@drawable/round_corner_edit_text"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp">
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/country_list_text"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/black_background"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Select Region"
+            android:textColor="@color/white"
+            android:paddingStart="@dimen/_10sdp"
+            android:imeOptions="actionNext"
+            android:textColorHint="@color/Grey"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/drop_down_click"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/long_text_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Where available, trees will be labelled with your names, You can see the organisations we support at wedo80.com"
+        android:textColor="#A9A9A9"/>
+
+    <TextView
+        android:id="@+id/paying_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/long_text_two"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="You are paying"
+        android:textColor="#A9A9A9"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/pay_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="₹199.00"
+        app:layout_constraintTop_toBottomOf="@id/paying_text"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"/>
+
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_30sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Confirm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:background="@drawable/grey_background"
+        app:layout_constraintTop_toBottomOf="@id/pay_amount"
+        android:layout_marginTop="@dimen/_50sdp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/countryList"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_minus5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+        tools:listitem="@layout/drop_down_items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

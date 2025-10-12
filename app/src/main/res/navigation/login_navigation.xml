@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginSignUpFragment">
+
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.wedo8020.app.mainui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/loginSignUpFragment"
+        android:name="com.wedo8020.app.mainui.login.LoginSignUpFragment"
+        android:label="LoginSignUpFragment" >
+        <action
+            android:id="@+id/action_loginSignUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginSignUpFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_loginSignUpFragment_to_recoverAccount"
+            app:destination="@id/recoverAccount" />
+        <action
+            android:id="@+id/action_loginSignUpFragment_to_noAccountAvailable"
+            app:destination="@id/noAccountAvailable" />
+        <action
+            android:id="@+id/action_loginSignUpFragment_to_createAccountFragment2"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.wedo8020.app.mainui.login.CreateAccountFragment"
+        android:label="CreateAccountFragment" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_selfCertificationFragment"
+            app:destination="@id/selfCertificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selfCertificationFragment"
+        android:name="com.wedo8020.app.mainui.login.SelfCertificationFragment"
+        android:label="fragment_self_certification"
+        tools:layout="@layout/fragment_self_certification" >
+        <action
+            android:id="@+id/action_selfCertificationFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.wedo8020.app.mainui.login.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_createPasswordFragment"
+            app:destination="@id/createPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.wedo8020.app.mainui.login.CreatePasswordFragment"
+        android:label="CreatePasswordFragment" >
+        <action
+            android:id="@+id/action_createPasswordFragment_to_recoveryCodeFragment"
+            app:destination="@id/recoveryCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoveryCodeFragment"
+        android:name="com.wedo8020.app.mainui.login.RecoveryCodeFragment"
+        android:label="RecoveryCodeFragment" >
+
+        <action
+            android:id="@+id/action_recoveryCodeFragment_to_interestFragment"
+            app:destination="@id/interestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/interestFragment"
+        android:name="com.wedo8020.app.mainui.login.InterestFragment"
+        android:label="InterestFragment" />
+    <fragment
+        android:id="@+id/recoverAccount"
+        android:name="com.wedo8020.app.mainui.login.RecoverAccount"
+        android:label="RecoverAccount" >
+        <action
+            android:id="@+id/action_recoverAccount_to_recoveredAccountFragment"
+            app:destination="@id/recoveredAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoveredAccountFragment"
+        android:name="com.wedo8020.app.mainui.login.RecoveredAccountFragment"
+        android:label="RecoveredAccountFragment" />
+    <fragment
+        android:id="@+id/noAccountAvailable"
+        android:name="com.wedo8020.app.mainui.login.NoAccountAvailable"
+        android:label="NoAccountAvailable" />
+
+</navigation>

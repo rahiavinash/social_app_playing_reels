@@ -1,0 +1,68 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WeDo80" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+
+        <item name="colorPrimaryDark">@color/black</item>
+
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="DropdownMenuStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:popupBackground">#505050</item> <!-- Set the background color -->
+    </style>
+
+    <style name="Theme.WeDo80" parent="Base.Theme.WeDo80" />
+
+    <style name="Base.Theme.WeDo80.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Base.Theme.WeDo80.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Base.Theme.WeDo80.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@drawable/logout_background</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Base.Theme.WeDo80" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="ImageView.Corner" parent="">
+        <item name="cornerSizeTopRight">15dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">     @android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.0</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="MyTransparentBottomSheetDialogTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/transparent</item>
+<!--        <item name="android:windowSoftInputMode">adjustNothing</item>-->
+
+        <item name="android:colorBackground">@android:color/transparent</item>
+    </style>
+    <style name="AppTheme_BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:background">@android:color/transparent</item>
+<!--        <item name="android:windowSoftInputMode">adjustNothing</item>-->
+
+        <item name="android:colorBackground">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/clOpenChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_7sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_7sdp">
+
+        <com.apachat.swipereveallayout.core.SwipeLayout
+            android:id="@+id/SwipeReveal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            app:dragEdge="right"
+            app:mode="same_level">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/rlSwipeBlockButton"
+                    android:layout_width="@dimen/_55sdp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/red_color_background"
+                    >
+
+                    <ImageView
+                        android:id="@+id/blockMsg"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_blocks"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/block"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/rlSwipeDeleteButton"
+                    android:layout_width="@dimen/_55sdp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/red_color_background"
+                    >
+
+                    <ImageView
+                        android:id="@+id/deleteMsg"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        app:tint="@color/RedColor"
+                        android:src="@drawable/ic_delete"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/_9sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:text="@string/delete"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/rlSwipeClearButton"
+                    android:layout_width="@dimen/_55sdp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/red_color_background"
+                    >
+
+                    <ImageView
+                        android:id="@+id/clearMsg"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_delete"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/clear"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/rlSwipePinButton"
+                    android:layout_width="@dimen/_55sdp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/red_color_background"
+                    >
+
+                    <ImageView
+                        android:id="@+id/pinMsg"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_pin"/>
+
+                    <TextView
+                        android:id="@+id/tvPinUnPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/_9sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:text="@string/pin"/>
+                </LinearLayout>
+               <!-- <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlSwipeBlockButton"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/red_color_background"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/block"
+                        android:textAlignment="center"
+                        android:textColor="@color/LightRedBlocked"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlSwipeDeleteButton"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/red_color_background"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/delete"
+                        android:textAlignment="center"
+                        android:textColor="@color/LightRedBlocked"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlSwipeClearButton"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/red_color_background"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/clear"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlSwipePinButton"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/red_color_background"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvPinUnPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/pin"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clOpenChats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivRestrictImage"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_47sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_greyuser"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivUserProfileImage"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_greyuser" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <ImageView
+                            android:id="@+id/ivBlueTick"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_toEndOf="@id/tvName"
+                            android:paddingBottom="@dimen/_1sdp"
+                            android:src="@drawable/bluetick"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="1"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <ImageView
+                            android:id="@+id/likeImage"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_toEndOf="@id/name"
+                            android:src="@drawable/ic_like"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvReport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/Blue"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvMessageCount"
+                        android:layout_width="22dp"
+                        android:layout_height="21dp"
+                        android:layout_gravity="end"
+                        android:background="@drawable/notification_count_background"
+                        android:backgroundTint="@color/appBlue"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_1sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvReport"
+                        tools:ignore="RtlCompat" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </com.apachat.swipereveallayout.core.SwipeLayout>
+
+    </LinearLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/accountType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/followCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:layout_alignParentEnd="true"
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pureWhite"
+
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_9sdp"
+                android:id="@+id/likeCount" />
+
+            <ImageView
+                android:id="@+id/likeImg"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:src="@drawable/ic_like"
+                android:layout_marginStart="@dimen/_4sdp" />
+        </LinearLayout>
+    </RelativeLayout>-->
+
+
+    <!--  <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:gravity="start">
+          <androidx.constraintlayout.widget.Guideline
+              android:id="@+id/glVerticalStart"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              app:layout_constraintGuide_percent="0.04" />
+
+          <androidx.constraintlayout.widget.Guideline
+              android:id="@+id/glVerticalEnd"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              app:layout_constraintGuide_percent="0.96" />
+
+          <ImageView
+              android:id="@+id/ivRestrictImage"
+              android:layout_width="@dimen/_30sdp"
+              android:layout_height="@dimen/_30sdp"
+              android:scaleType="centerCrop"
+
+              android:src="@drawable/dummy_image"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="@+id/glVerticalStart"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/clProfileCardView"
+              android:layout_width="@dimen/_31sdp"
+              android:layout_height="@dimen/_31sdp"
+              android:layout_marginStart="@dimen/_7sdp"
+              app:cardBackgroundColor="@color/white"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/ivRestrictImage"
+              app:layout_constraintTop_toTopOf="parent">
+
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cardView"
+                  android:layout_width="@dimen/_30sdp"
+                  android:layout_height="@dimen/_30sdp"
+                  app:cardBackgroundColor="@color/white"
+                  app:cardCornerRadius="260dp"
+                  app:cardElevation="0dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:strokeColor="#e6e6e6"
+                  tools:ignore="MissingConstraints">
+
+                  <androidx.cardview.widget.CardView
+                      android:layout_width="@dimen/_30sdp"
+                      android:layout_height="@dimen/_30sdp"
+                      android:layout_gravity="center"
+                      app:cardBackgroundColor="@color/white"
+                      app:cardCornerRadius="250dp"
+                      app:cardElevation="0dp"
+                      app:strokeColor="#e6e6e6">
+
+                      <ImageView
+                          android:id="@+id/ivUserProfileImage"
+                          android:layout_width="@dimen/_30sdp"
+                          android:layout_height="@dimen/_30sdp"
+                          android:scaleType="centerCrop"
+                          android:src="@drawable/dummy_image" />
+
+                  </androidx.cardview.widget.CardView>
+              </androidx.cardview.widget.CardView>
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/constraintLayout3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/clProfileCardView"
+              app:layout_constraintTop_toTopOf="parent">
+
+              <TextView
+                  android:id="@+id/tvName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/poppins"
+                  android:text="Name"
+                  android:textColor="@color/LightBlack"
+                  android:textSize="@dimen/_11sdp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/tvHeartCount"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingStart="@dimen/_4sdp"
+                  android:text="77.M"
+                  android:textColor="@color/LightGreyText"
+                  android:textSize="@dimen/_9sdp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+              <ImageView
+                  android:layout_width="@dimen/_10sdp"
+                  android:layout_height="@dimen/_10sdp"
+                  android:layout_gravity="center"
+                  android:layout_marginStart="@dimen/_2sdp"
+                  android:layout_weight="1"
+                  android:elevation="@dimen/_2sdp"
+                  android:paddingTop="@dimen/_3sdp"
+                  android:src="@drawable/ic_likes"
+                  app:layout_constraintBottom_toBottomOf="@+id/tvHeartCount"
+                  app:layout_constraintStart_toEndOf="@+id/tvHeartCount"
+                  app:layout_constraintTop_toTopOf="@+id/tvHeartCount" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+          <TextView
+              android:id="@+id/tvUnBlockButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/poppins_medium"
+              android:gravity=""
+              android:text="Unblock"
+              android:textColor="@color/LightBlack"
+              android:textSize="@dimen/_9sdp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toStartOf="@+id/glVerticalEnd"
+              app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="0.5dp"
+              android:background="@color/LightGrey"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginTop="@dimen/_6sdp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/clProfileCardView" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+</layout>

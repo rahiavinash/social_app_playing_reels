@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:id="@+id/mainLayout1"
+    android:orientation="vertical">
+
+    <View
+
+        android:background="@android:color/transparent"
+        android:id="@+id/view"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_width="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bottom_sheet_background"
+        android:layout_below="@+id/view"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <TextView
+            android:fontFamily="@font/poppins"
+            android:id="@+id/no_data_found"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/no_result_found"
+            android:textColor="@color/pureWhite"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:fontFamily="@font/poppins"
+            android:id="@+id/label"
+            android:includeFontPadding="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:text="@string/send_to"
+            android:textColor="@color/Grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchCard"
+            android:layout_below="@id/label"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="0dp"
+            app:cardBackgroundColor="@color/bottomsheet_bg_color"
+            app:cardCornerRadius="@dimen/_30sdp"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            app:layout_constraintTop_toBottomOf="@id/label">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="@dimen/_12sdp">
+
+                <ImageView
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_width="@dimen/_18sdp"
+
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/Grey" />
+
+                <EditText
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/search"
+                    android:id="@+id/searchEt"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_7sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:textColor="@color/pureWhite"
+                    android:textColorHint="@color/Grey"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintBottom_toTopOf="@id/sendBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+        app:layout_constraintTop_toBottomOf="@id/searchCard">
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedSV"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/tagUserRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clipToPadding="true"
+
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/loadingPB"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:background="@drawable/btn_bg"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:id="@+id/sendBtn"
+            android:includeFontPadding="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:text="Send"
+            android:textColor="@color/unselectedColor"
+            android:textSize="@dimen/_10sdp"
+            app:backgroundTint="@color/pureWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:fontFamily="@font/poppins"
+            android:id="@+id/share_other"
+            android:includeFontPadding="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:layout_width="wrap_content"
+            android:text="@string/more"
+            android:textColor="@color/unselectedColor"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/sendBtn"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toTopOf="@id/sendBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+
+    <!--  <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+
+      </ScrollView>-->
+

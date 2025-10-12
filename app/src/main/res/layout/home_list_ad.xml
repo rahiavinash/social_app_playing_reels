@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pureBlack"
+        android:layout_marginTop="@dimen/_15sdp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            ads:adSize="MEDIUM_RECTANGLE"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.google.android.gms.ads.AdView>
+
+
+        <!--  <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/ivUserImage"
+             android:layout_width="@dimen/margin_40"
+             android:layout_height="@dimen/margin_40"
+             android:layout_marginTop="@dimen/margin_10"
+             android:padding="1.5dp"
+             android:src="@drawable/subway"
+             app:layout_constraintStart_toStartOf="@id/gStart"
+             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="@dimen/margin_16"
+             android:layout_marginEnd="@dimen/margin_10"
+             android:ellipsize="end"
+             android:fontFamily="@font/averta_semibold"
+             android:singleLine="true"
+             android:text="@string/subway"
+             android:textColor="@color/black"
+             android:textSize="@dimen/sp18"
+             app:layout_constraintBottom_toBottomOf="@id/ivUserImage"
+             app:layout_constraintEnd_toStartOf="@id/ivMenu"
+             app:layout_constraintStart_toEndOf="@id/ivUserImage"
+             app:layout_constraintTop_toTopOf="@id/ivUserImage" />
+
+
+         <ImageView
+             android:id="@+id/ivMenu"
+             android:layout_width="@dimen/margin_24"
+             android:layout_height="@dimen/margin_24"
+             android:elevation="@dimen/dp2"
+             android:padding="@dimen/margin_5"
+             android:src="@drawable/ic_menu"
+             app:layout_constraintBottom_toBottomOf="@id/ivUserImage"
+             app:layout_constraintEnd_toEndOf="@id/gEnd"
+             app:layout_constraintTop_toTopOf="@id/ivUserImage" />
+
+
+
+         <TextView
+             android:id="@+id/tvDetailsOne"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_10"
+             android:fontFamily="@font/averta_regular"
+             android:text="@string/you_can_look_but_you_can_t_touch_ok_you_can_touch_but_can_you_handle_me_check_out_tmy_dimensions_two_all_beef_patties_and_juicy_all_over"
+             android:textColor="@color/black"
+             android:textSize="@dimen/sp_14"
+             app:layout_constraintEnd_toEndOf="@id/gEnd"
+             app:layout_constraintStart_toStartOf="@id/gStart"
+             app:layout_constraintTop_toBottomOf="@id/ivFeddImage" />
+
+         <TextView
+             android:id="@+id/tvDetailsTwo"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/averta_semibold"
+             android:text="@string/are_you_mac_enough"
+             android:textColor="@color/black"
+             app:layout_constraintBottom_toBottomOf="parent"
+             android:layout_marginBottom="@dimen/margin_10"
+             android:layout_marginTop="@dimen/margin_5"
+             android:textSize="@dimen/sp_14"
+             app:layout_constraintEnd_toEndOf="@id/gEnd"
+             app:layout_constraintStart_toStartOf="@id/gStart"
+             app:layout_constraintTop_toBottomOf="@id/tvDetailsOne" />
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/averta_regular"
+             android:text="@string/_10_30_pm"
+             android:textColor="#B0B9C8"
+             android:textSize="@dimen/sp14"
+             app:layout_constraintBottom_toBottomOf="@id/tvDetailsTwo"
+             app:layout_constraintEnd_toEndOf="@id/gEnd"
+             app:layout_constraintTop_toTopOf="@id/tvDetailsTwo" />
+
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/bType"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_10"
+             android:elevation="2dp"
+             android:translationY="2dp"
+             app:cardCornerRadius="@dimen/margin_15"
+             app:layout_constraintStart_toStartOf="@id/gStart"
+             app:layout_constraintTop_toBottomOf="@id/ivUserImage">
+
+             <androidx.constraintlayout.widget.ConstraintLayout
+                 android:id="@+id/clType"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="@drawable/bt_sponsered"
+                 android:paddingHorizontal="@dimen/margin_40"
+                 android:paddingVertical="@dimen/margin_8">
+
+                 <TextView
+                     android:id="@+id/tvType"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="@dimen/margin_5"
+                     android:fontFamily="@font/averta_semibold"
+                     android:text="@string/sponsored"
+                     android:textAllCaps="true"
+                     android:textColor="#096637"
+                     android:textSize="@dimen/sp_11"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
+         </androidx.cardview.widget.CardView>
+
+
+         <ImageView
+             android:id="@+id/ivFeddImage"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/margin_300"
+             android:layout_marginTop="@dimen/margin_20"
+             android:scaleType="centerCrop"
+             android:src="@drawable/subway"
+             app:layout_constraintTop_toBottomOf="@id/bType" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

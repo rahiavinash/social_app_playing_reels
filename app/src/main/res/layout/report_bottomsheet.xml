@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_20sdp"
+        android:background="@color/bottomsheet_bg_color">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+
+        <LinearLayout
+            android:id="@+id/politcalBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/politicalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/political_religious_incitement"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hateSpeechBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/politcalBtn">
+
+            <TextView
+                android:id="@+id/hateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/hate_speech"
+                android:textSize="@dimen/_12sdp"
+                android:layout_weight=".78"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nudityBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/hateSpeechBtn">
+
+            <TextView
+                android:id="@+id/nudityText"
+                android:layout_width="0dp"
+                android:layout_weight=".78"
+                android:layout_height="wrap_content"
+                android:text="@string/nudity_sexual_activity"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bullyingBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/nudityBtn">
+
+            <TextView
+                android:id="@+id/bullyingText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".78"
+                android:text="@string/bullying_harassment"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

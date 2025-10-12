@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- seekbar_progress_line.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background of the SeekBar -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+        </shape>
+    </item>
+
+    <!-- Progress of the SeekBar -->
+    <item android:id="@android:id/progress">
+        <shape android:shape="rectangle">
+            <solid android:color="#888888" /> <!-- Grey color for progress -->
+        </shape>
+    </item>
+
+</layer-list>

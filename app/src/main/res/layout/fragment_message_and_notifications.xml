@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".mainui.home.chatAndNotification.MessageAndNotificationsFragment">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--  <ImageView
+                  android:id="@+id/ivBack"
+                  android:layout_width="@dimen/_42sdp"
+                  android:layout_height="@dimen/_20sdp"
+                  android:layout_marginTop="@dimen/_2sdp"
+                  android:layout_marginStart="@dimen/_8sdp"
+                  android:paddingEnd="@dimen/_21sdp"
+                  android:visibility=""
+                  android:src="@drawable/ic_back_arrow"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />-->
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Messaging"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/IvSetting"
+                android:layout_width="@dimen/_21sdp"
+                android:layout_height="@dimen/_21sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:src="@drawable/ic_white_setting"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tab_layout">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glVerticalMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <TextView
+                android:id="@+id/tvGivenTab"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="bottom"
+                android:text="Messages"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toStartOf="@+id/glVerticalMed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/ivGivenBar"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_message_bar"
+                app:layout_constraintEnd_toStartOf="@+id/glVerticalMed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGivenTab" />
+            <TextView
+                android:id="@+id/tvReceiveTab"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="bottom"
+                android:text="Notifications"
+                android:textAlignment="center"
+                android:textColor="@color/Grey"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/glVerticalMed"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/tvNotification"
+                android:layout_width="23dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:background="@drawable/notification_count_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/tvReceiveTab"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="23dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:background="@drawable/notification_count_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/tvGivenTab"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivReceivedBar"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_message_bar"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/glVerticalMed"
+                app:layout_constraintTop_toBottomOf="@+id/tvReceiveTab" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:alpha="0"
+            android:background="@color/LightBlack"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+            app:tabIndicatorColor="@color/transparent"
+            app:tabRippleColor="@color/transparent" />
+
+        <com.wedo8020.app.mainui.customView.CustomViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

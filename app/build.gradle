@@ -1,0 +1,258 @@
+plugins {
+   id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'com.wedo8020.app'
+    compileSdk 34
+
+    def envProperties = findProperty("env") ?: "dev"
+
+    // Directly specify the path to the properties file
+    def propertiesFile = "gradle-${envProperties}.properties"
+
+    // Load properties using direct path
+    def props = new Properties()
+    props.load(new FileInputStream(propertiesFile))
+    def baseUrlWithApi = "${props['BASE_URL_STRING']}${props['API_VERSION_STRING']}"
+    defaultConfig {
+        applicationId "com.wedo8020.app"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "\"${baseUrlWithApi}\"")
+        buildConfigField("String", "SOCKET_URL", "\"${props['SOCKET_URL_STRING']}\"")
+        buildConfigField("String", "ENCRYPT_SECRET", "\"${props['CRYPTO_SECRET_STRING']}\"")
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+//            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+//            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures
+            {
+                buildConfig = true
+                dataBinding = true
+                viewBinding true
+            }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+dependencies {
+    implementation project(path: ':videocompressor')
+    implementation 'androidx.camera:camera-view:1.3.0'
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+    implementation 'androidx.emoji:emoji-bundled:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    def room_version = "2.6.1"
+    def billing_version = "6.1.0"
+
+    implementation "com.android.billingclient:billing:$billing_version"
+    implementation "com.android.billingclient:billing-ktx:$billing_version"
+
+    implementation "androidx.work:work-runtime:2.7.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:2.6.1"
+    implementation project(path: ':videocompressor')
+    implementation 'androidx.camera:camera-view:1.3.0'
+
+    kapt "androidx.room:room-compiler:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'
+    implementation "androidx.activity:activity-ktx:1.8.2"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
+    implementation 'androidx.annotation:annotation:1.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.media3:media3-exoplayer:1.2.0'
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx:21.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    //sdp - size unit scales with the screen size
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    //circle indicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    //image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    //admob
+    implementation 'com.google.android.gms:play-services-ads:22.4.0'
+
+
+
+    //Retrofit and gson Convertor or interceptor
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
+
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    implementation 'com.auth0.android:jwtdecode:1.3.0'
+
+    implementation "androidx.core:core-splashscreen:1.0.1"
+
+    //exoplayer
+    implementation 'androidx.media3:media3-exoplayer:1.2.0'
+    implementation 'androidx.media3:media3-exoplayer-dash:1.2.0'
+    implementation 'androidx.media3:media3-ui:1.2.0'
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.67'
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
+
+    //shimmer layout
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+
+//Tablayout & ViewPagar
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:28.0.0"
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:support-v4:28.1.0"
+    implementation 'com.google.android.material:material:1.10.0'
+
+    implementation 'ru.noties:scrollable:1.3.0'
+
+    // Country Code Picker Dependency
+    implementation 'com.hbb20:ccp:2.5.1'
+
+    //Three Dot lotte Progressbar
+    def lottieVersion = "3.5.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    // video frame extract
+
+    implementation('io.socket:socket.io-client:2.1.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+   implementation "com.arthenica:ffmpeg-kit-full:6.0-2.LTS"
+    //implementation 'com.arthenica:mobile-ffmpeg-full:4.5.LTS'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:21.0.0'
+    implementation "androidx.recyclerview:recyclerview:1.3.2"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation 'com.google.android.material:material:1.10.0'
+
+
+
+
+//For Gson converter the data
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    //Event Bus
+    implementation("org.greenrobot:eventbus:3.3.1")
+
+//    implementation 'com.gongwen:swipeback:1.0.2'
+
+    //swipe and delete
+    implementation group: 'com.apachat', name: 'swipereveallayout-android', version: '1.1.2'
+
+    //Zoom
+    implementation "com.otaliastudios:zoomlayout:1.9.0"
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'io.github.aghajari:AXEmojiView:1.5.2'
+   // debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+//    implementation 'com.gongwen:swipeback:1.0.2'
+
+    implementation 'io.branch.sdk.android:library:5.8.0'
+    // Check for latest version before hard-coding
+
+    implementation 'store.galaxy.samsung.installreferrer:samsung_galaxystore_install_referrer:4.0.0'
+
+    // Required if your app is in the Google Play Store (tip: avoid using bundled play services libs):
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+
+    // Required if your app is in the Google Play Store (tip: avoid using bundled play services libs):
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+
+    // firebase api
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+    implementation("com.google.firebase:firebase-analytics")
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics'
+
+    // branch.io library
+    // Required for all Android apps:
+    implementation 'io.branch.sdk.android:library:5.8.0'
+    // Check for latest version before hard-coding
+
+    implementation 'store.galaxy.samsung.installreferrer:samsung_galaxystore_install_referrer:4.0.0'
+
+    // Required if your app is in the Google Play Store (tip: avoid using bundled play services libs):
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+
+    implementation("com.vanniktech:emoji-google:0.6.0")
+
+
+    implementation (
+            group: 'com.aspose',
+            name: 'aspose-cells',
+            version: '21.3',
+            classifier: 'android.via.java')
+
+
+
+}

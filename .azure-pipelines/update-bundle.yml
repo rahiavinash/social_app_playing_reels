@@ -1,0 +1,17 @@
+    steps:
+    - task: Bash@3
+      displayName: 'Update variable inside a variable group'
+      inputs:
+        targetType: "inline"
+        script: |
+          newValue=$(($(BundleVersion)+1))
+          echo $newValue
+
+          echo $SYSTEM_ACCESSTOKEN | az devops login
+          az pipelines variable-group variable update --group-id $(group_id) \
+            --name BundleVersion \
+            --value "${newValue}" \
+            --org https://dev.azure.com/WeDo80twenty \
+            --project 'WD8020 Mobile'
+      env:
+        SYSTEM_ACCESSTOKEN: $(System.AccessToken)

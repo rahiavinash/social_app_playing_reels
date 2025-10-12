@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "985494677410",
+    "project_id": "pc-api-5363999244733942155-606",
+    "storage_bucket": "pc-api-5363999244733942155-606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985494677410:android:4459a54ebf548ff115f4fb",
+        "android_client_info": {
+          "package_name": "com.wedo8020.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985494677410-6q34co5lu9rsl47fl0b12uhq113l5ll4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wedo8020.app",
+            "certificate_hash": "449cbc1e9137e220102f8e55e23c8ead5d826ad0"
+          }
+        },
+        {
+          "client_id": "985494677410-8vmqt3n06a29kv27m5usaumissqp3l37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wedo8020.app",
+            "certificate_hash": "213fa274485fd06981ee2b4d5e77bf631c1f5a20"
+          }
+        },
+        {
+          "client_id": "985494677410-f3bji2bglvv2t4385bj6flbgjhrfh52i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wedo8020.app",
+            "certificate_hash": "9d6859cf32923e2e8d3c4c4a96e2ac14721149a2"
+          }
+        },
+        {
+          "client_id": "985494677410-6dg6asrqv7vi41kod82eeitgdljgg79c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7-Ou1ZY4H6NbZX3hT1zhbuCwHs7j_-Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985494677410-6dg6asrqv7vi41kod82eeitgdljgg79c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "985494677410-2r21nsd1fpgjb4k5fqrun0hfoc36vnrc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wedo80.app"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1695557539162023~9328544422"
+    }
+  ],
+  "configuration_version": "1"
+}

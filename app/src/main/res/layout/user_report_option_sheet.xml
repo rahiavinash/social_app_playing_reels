@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_20sdp"
+        android:background="@color/pureWhite">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_minus8sdp"
+            android:text="@string/pretending_to_be"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/pureBlack"
+            android:id="@+id/pretending_label"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"/>
+
+        <LinearLayout
+            android:id="@+id/me_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@id/pretending_label">
+
+            <TextView
+                android:id="@+id/me_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/me"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/someone_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@id/me_btn">
+
+            <TextView
+                android:id="@+id/someone_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/someone_else"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/public_figure_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@id/someone_btn">
+
+            <TextView
+                android:id="@+id/public_figure_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/a_public_figure"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/business_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@id/public_figure_btn">
+
+            <TextView
+                android:id="@+id/business_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/a_business"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_minus8sdp"
+            android:text="@string/content_is"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/pureBlack"
+            android:id="@+id/content_label"
+            app:layout_constraintTop_toBottomOf="@id/business_btn"
+            app:layout_constraintStart_toStartOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toEndOf="@id/glVerticalEnd"/>
+
+        <LinearLayout
+            android:id="@+id/politcalBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@id/content_label">
+
+            <TextView
+                android:id="@+id/politicalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/political_religious_incitement"
+                android:layout_weight=".78"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hateSpeechBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/politcalBtn">
+
+            <TextView
+                android:id="@+id/hateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/hate_speech"
+                android:textSize="@dimen/_12sdp"
+                android:layout_weight=".78"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nudityBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/hateSpeechBtn">
+
+            <TextView
+                android:id="@+id/nudityText"
+                android:layout_width="0dp"
+                android:layout_weight=".78"
+                android:layout_height="wrap_content"
+                android:text="@string/nudity_sexual_activity"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bullyingBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/glVerticalStart"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalEnd"
+            app:layout_constraintTop_toBottomOf="@+id/nudityBtn">
+
+            <TextView
+                android:id="@+id/bullyingText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".78"
+                android:text="@string/bullying_harassment"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/pureBlack" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

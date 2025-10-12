@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+
+        <com.apachat.swipereveallayout.core.SwipeLayout
+            android:id="@+id/SwipeReveal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dragEdge="right"
+            app:mode="same_level">
+
+            <LinearLayout
+                android:id="@+id/rlSwipeDeleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00000000">
+
+                <ImageView
+                    android:id="@+id/deleteMsg"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_reply_back" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/optionButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/messageLayout"
+                    android:layout_marginEnd="-18dp"
+                    android:layout_toStartOf="@+id/messageLayout"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvSent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/sent"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="@dimen/_7sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSentDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="@dimen/_7sdp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSent" />
+
+                    <TextView
+                        android:id="@+id/tvSentTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="@dimen/_7sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSentDate" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/messageLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/tvUnsent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:paddingStart="@dimen/_7sdp"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_13sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:text="Unsent"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_min="@dimen/_80sdp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSenderImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clReply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvSendReply"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/reply_blackground"
+                                android:backgroundTint="@color/appBlue"
+                                android:fontFamily="@font/poppins"
+                                android:paddingStart="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_8sdp"
+                                android:paddingEnd="@dimen/_13sdp"
+                                android:paddingBottom="@dimen/_8sdp"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="14sp"
+
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clSendReplyMainMessage"
+                                app:layout_constraintWidth_min="@dimen/_80sdp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clSendReplyMainMessage"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/reply_background"
+                                android:drawableStart="@drawable/ic_reply"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:paddingEnd="@dimen/_13sdp"
+                                android:paddingBottom="@dimen/_2sdp"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="@dimen/_10sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/tvSendReply"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_min="@dimen/_80sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:src="@drawable/ic_reply"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivReplyPostImage"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                                <ImageView
+                                    android:id="@+id/ivReplyImage"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/postNotFound"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            app:layout_constraintBottom_toBottomOf="@+id/llImage"
+                            app:layout_constraintEnd_toEndOf="@+id/llImage"
+                            app:layout_constraintStart_toStartOf="@+id/llImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <LinearLayout
+                            android:id="@+id/llImage"
+                            android:layout_width="@dimen/_110sdp"
+                            android:layout_height="@dimen/_160sdp"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="RtlSymmetry">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardBackgroundColor="@color/appBlue"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/senderImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/reactionLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:elevation="1dp"
+                        android:visibility="gone"
+                        android:padding="@dimen/_2sdp"
+                        android:background="@drawable/reaction_white_background"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginStart="6dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clSenderImage">
+
+                        <TextView
+                            android:id="@+id/emoji1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="😜"
+                            android:textColor="#fff"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/emoji2"
+                            android:layout_width="25dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="😜"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/messageLayout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/poppins"
+                    android:textAllCaps="true"
+                    android:textColor="@color/Grey2"
+                    android:textSize="@dimen/_9sdp" />
+
+
+            </RelativeLayout>
+        </com.apachat.swipereveallayout.core.SwipeLayout>
+
+        <TextView
+            android:id="@+id/tvSeen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Seen"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</layout>

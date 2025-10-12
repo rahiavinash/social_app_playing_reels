@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".mainui.home.chatAndNotification.chat.ShowChatFragment">
+        <RelativeLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <RelativeLayout
+                android:id="@+id/blackScreen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_above="@+id/constraintLayout5"
+                android:background="#80000000"
+                >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMessageChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_15sdp"
+                        android:clipToPadding="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/show_message_recycleview" />
+                    <ImageView
+                        android:id="@+id/noChatFound"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        android:src="@color/white"
+                        android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivScrollDown"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_50sdp"
+                    android:src="@drawable/ic_scroll_down"
+                    android:visibility="gone"
+                     />
+
+
+            </RelativeLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black">
+
+                <TextView
+                    android:id="@+id/tvReplyMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@color/appBlue"
+                    android:drawableStart="@drawable/ic_reply"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:maxLines="1"
+                    android:padding="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_40sdp"
+                    android:textColor="@color/pureWhite"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_white_close"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReplyMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvReplyMessage" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/messageSend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/backgroundsearch"
+                    android:backgroundTint="@color/bottomsheet_bg_color"
+                    android:paddingTop="10dp"
+              android:visibility="gone"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivImageButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReplyMessage">
+
+                    <EditText
+                        android:id="@+id/edMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="#00000000"
+                        android:fontFamily="@font/poppins"
+                        android:hint="@string/send_a_message"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:letterSpacing="0.05"
+                        android:maxLines="6"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:singleLine="false"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/Grey"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="@dimen/dp_26"
+                            android:layout_height="@dimen/dp_26"
+                            android:layout_marginEnd="@dimen/dp_14"
+                            android:src="@drawable/ic_black_camera"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="@dimen/dp_26"
+                            android:layout_height="@dimen/dp_26"
+                            android:layout_marginEnd="@dimen/dp_12"
+                            android:src="@drawable/ic_attach_square"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView5"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/ivImageButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_uploading_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/messageSend"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/messageSend"
+                    app:layout_goneMarginTop="@dimen/_8sdp" />
+
+                <ImageView
+                    android:id="@+id/ivSendButton"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:src="@drawable/ic_sendmessage"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/messageSend"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/messageSend"
+                    app:layout_goneMarginTop="@dimen/_8sdp" />
+                <!--   <ImageView
+                       android:layout_width="@dimen/dp_35"
+                       android:layout_height="@dimen/dp_35"
+                       android:layout_marginStart="@dimen/dp_12"
+                       android:src="@drawable/ic_send_button"
+                       app:layout_constraintBottom_toBottomOf="@+id/ivSendButton"
+                       app:layout_constraintEnd_toEndOf="@+id/ivSendButton"
+                       app:layout_constraintStart_toEndOf="@+id/edMessage"
+                       app:layout_constraintTop_toTopOf="@+id/ivSendButton" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReplyDisable"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/backgroundsearch"
+                android:backgroundTint="@color/pureWhite"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvReplyDisable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="@string/reply_disabled"
+                    android:textColor="@color/lightblack"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--   <ImageView
+                       android:layout_width="@dimen/dp_35"
+                       android:layout_height="@dimen/dp_35"
+                       android:layout_marginStart="@dimen/dp_12"
+                       android:src="@drawable/ic_send_button"
+                       app:layout_constraintBottom_toBottomOf="@+id/ivSendButton"
+                       app:layout_constraintEnd_toEndOf="@+id/ivSendButton"
+                       app:layout_constraintStart_toEndOf="@+id/edMessage"
+                       app:layout_constraintTop_toTopOf="@+id/ivSendButton" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/black"
+            android:paddingBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/IvBack"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+               android:paddingTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_29sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                android:src="@drawable/ic_back_arrow_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserProfileImage"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:src="@drawable/ic_greyuser"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/IvBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvOtherUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivUserProfileImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivBlueTick"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@id/tvOtherUserName"
+                android:src="@drawable/bluetick"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/tvOtherUserName"
+                app:layout_constraintTop_toTopOf="@+id/tvOtherUserName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/whiteLotteAnimation"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+android:layout_marginBottom="-15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+
+            android:visibility="gone"
+            app:lottie_rawRes="@raw/round" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/clbar">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/round" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".mainui.home.profilesetting.UpdateAccountDetailsFragment">
+        <ScrollView
+            android:id="@+id/ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:text="Name"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_60sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/base_background"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                app:boxStrokeWidth="0dp"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+            <TextView
+                android:id="@+id/tvDoB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:text="Date of Birth"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/base_background"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                android:textSize="@dimen/_12sdp"
+                app:boxStrokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDoB" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:text="User Name"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+            <EditText
+                android:id="@+id/edUserName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/base_background"
+                app:boxStrokeWidth="0dp"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+            <TextView
+                android:id="@+id/TvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:text="Email"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edUserName" />
+
+            <EditText
+                android:id="@+id/edEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/base_background"
+                app:boxStrokeWidth="0dp"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TvEmail" />
+
+            <TextView
+
+                android:id="@+id/tvMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins"
+                android:text="Mobile Number"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edEmail" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clmobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/base_background"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMobileNumber">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glvStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.17" />
+
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/countryCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5sdp"
+
+                        android:fontFamily="@font/poppins"
+                        android:text="+1"
+                        android:textColor="@color/LightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_toEndOf="@id/countryCode"
+                        android:src="@drawable/ic_arrow_down" />
+
+
+                </RelativeLayout>
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    app:ccp_showFlag="false"
+                    android:alpha="0"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:textSize="@dimen/_12sdp"
+                    app:ccp_showNameCode="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginEnd="@dimen/_13sdp"
+                    android:digits="1234567890"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="phone"
+                    android:hint="Enter Mobile Number"
+                    android:maxLength="10"
+                    android:background="@drawable/base_background"
+
+                    android:textSize="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/GreyPasswordColor"
+                    android:textColor="@color/LightBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+           <!-- <EditText
+                android:id="@+id/edMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/base_background"
+                app:boxStrokeWidth="0dp"
+                android:fontFamily="@font/poppins"
+                android:hint="Enter Mobile Number"
+                android:textColorHint="@color/GreyPasswordColor"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMobileNumber" />-->
+
+            <TextView
+                android:id="@+id/tvChangePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Change Password"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clmobileNumber" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCurrentPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:focusable="false"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:inputType="textPassword"
+                android:textColor="@color/LightBlack"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvChangePassword"
+                app:passwordToggleDrawable="@drawable/password_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/LightBlack"
+                app:rippleColor="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCurrentPassword2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:hint="Enter Current Password"
+                    android:background="@drawable/base_background"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="@color/LightBlack"
+                    android:textColorHint="@color/GreyPasswordColor"
+                    android:textSize="@dimen/_12sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:errorEnabled="true"
+                    app:rippleColor="@android:color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:focusable="false"
+                android:inputType="textPassword"
+                android:textColor="@color/LightBlack"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCurrentPassword"
+                app:passwordToggleDrawable="@drawable/password_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/LightBlack"
+                app:rippleColor="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNewPassword2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_background"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="textPassword"
+                 android:hint="Enter New Password"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="@color/LightBlack"
+                    android:textColorHint="@color/GreyPasswordColor"
+                    android:textSize="@dimen/_12sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:errorEnabled="true"
+                    app:rippleColor="@android:color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:focusable="false"
+                android:inputType="textPassword"
+                android:textColor="@color/LightBlack"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etNewPassword"
+                app:passwordToggleDrawable="@drawable/password_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/LightBlack"
+                app:rippleColor="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConfirmPassword2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_background"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Confirm New Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="@color/LightBlack"
+                    android:textColorHint="@color/GreyPasswordColor"
+                    android:textSize="@dimen/_12sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:errorEnabled="true"
+                    app:rippleColor="@android:color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+     <!--   <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etCurrentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:focusable="false"
+            android:inputType="textPassword"
+            android:textColor="@color/LightBlack"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentPassword"
+            app:passwordToggleDrawable="@drawable/pa"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/PasswordGreenEyes"
+            app:rippleColor="@android:color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCurrentPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_weight="1"
+                android:background="@drawable/whitebackground"
+                android:fontFamily="@font/sfmedium"
+                android:inputType="textPassword"
+                android:letterSpacing="0.05"
+                android:paddingStart="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_5"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/LightgreyLogin"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="@dimen/sp_15"
+                app:boxStrokeWidth="0dp"
+                app:errorEnabled="true"
+                app:rippleColor="@android:color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/IvSetting"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Account"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:textColor="@color/LightBlack"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="@dimen/_68sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/blue_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:padding="@dimen/_3sdp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

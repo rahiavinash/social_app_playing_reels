@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.WeDo80" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+
+        <item name="colorPrimaryDark">@color/black</item>
+
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+    <style name="AppTheme_BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+    </style>
+</resources>

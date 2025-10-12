@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.wedo8020.app.mainui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home_screen2" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_permissionFragment"
+            app:destination="@id/permissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/xchangeFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.XchangeFragment"
+        android:label="fragment_xchange"
+        tools:layout="@layout/fragment_xchange" >
+        <action
+            android:id="@+id/action_xchangeFragment_to_premiumPurchaseFragment"
+            app:destination="@id/premiumPurchaseFragment" />
+        <action
+            android:id="@+id/action_xchangeFragment_to_buySrcFragment"
+            app:destination="@id/buySrcFragment" />
+        <action
+            android:id="@+id/action_xchangeFragment_to_plantTreesFragment"
+            app:destination="@id/plantTreesFragment" />
+        <action
+            android:id="@+id/action_xchangeFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
+        <action
+            android:id="@+id/action_xchangeFragment_to_mostLikedFragment"
+            app:destination="@id/mostLikedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.wedo8020.app.mainui.home.createpost.UploadFragment"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" >
+        <action
+            android:id="@+id/action_uploadFragment_to_previewFragment"
+            app:destination="@id/previewFragment" />
+        <action
+            android:id="@+id/action_uploadFragment_to_thumbNailFragment"
+            app:destination="@id/thumbNailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagingFragment"
+        android:name="com.wedo8020.app.mainui.home.MessagingFragment"
+        android:label="fragment_messaging"
+        tools:layout="@layout/fragment_messaging" />
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.wedo8020.app.mainui.home.ProfileFragment"
+        android:label="fragment_profile"
+
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_profileFragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_profileFragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_likeGivenAndReceiveFragment"
+            app:destination="@id/likeGivenAndReceiveFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_receiveListFragment"
+            app:destination="@id/receiveListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_friendFollowerFragment"
+            app:destination="@id/friendFollowerFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_showProfileFragment"
+            app:destination="@id/showProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_switchAccountFragment"
+            app:destination="@id/switchAccountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/blockedUserFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.blockReportList.BlockedUserFragment"
+        android:label="BlockedUserFragment" />
+    <fragment
+        android:id="@+id/profileSettingsFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.ProfileSettingsFragment"
+        android:label="ProfileSettingsFragment" >
+        <action
+            android:id="@+id/action_profileSettingsFragment_to_downLoadMyDataFragment"
+            app:destination="@id/downLoadMyDataFragment" />
+        <action
+            android:id="@+id/action_profileSettingsFragment_to_userExperienceFragment"
+            app:destination="@id/userExperienceFragment" />
+        <action
+            android:id="@+id/action_profileSettingsFragment_to_switchAccountFragment"
+            app:destination="@id/switchAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateAccountDetailsFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.UpdateAccountDetailsFragment"
+        android:label="UpdateAccountDetailsFragment" />
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.DeleteFragment"
+        android:label="DeleteFragment" />
+    <fragment
+        android:id="@+id/changeYourInterestFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.ChangeYourInterestFragment"
+        android:label="ChangeYourInterestFragment" />
+    <fragment
+        android:id="@+id/feedBackFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.FeedBackFragment"
+        android:label="FeedBackFragment" />
+    <fragment
+        android:id="@+id/repportProblemFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.ReportProblemFragment"
+        android:label="RepportProblemFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.wedo8020.app.mainui.home.editProfile.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_roundImageCropFragment"
+            app:destination="@id/roundImageCropFragment" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPostFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.EditPostFragment"
+        android:label="EditPostFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.wedo8020.app.mainui.home.postFragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_otherprofileFragment"
+            app:destination="@id/otherProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_searchFragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/otherProfileFragment"
+        android:name="com.wedo8020.app.mainui.home.otherUser.OtherUserProfileFragment"
+        android:label="OtherUserProfileFragment"
+        tools:layout="@layout/fragment_other_user_profile">
+        <action
+            android:id="@+id/action_otherProfileFragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_otherProfileFragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment" />
+        <action
+            android:id="@+id/action_other_profile_fragment_to_likeGivenAndReceiveFragment"
+            app:destination="@id/likeGivenAndReceiveFragment" />
+        <action
+            android:id="@+id/action_other_profile_fragment_to_follower_following_fragment"
+            app:destination="@id/follower_following_fragment" />
+    </fragment>
+    <!--<fragment
+        android:id="@+id/searchFragment"
+        android:name="com.app.wedo8020.mainui.home.postFragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>-->
+    <fragment
+        android:id="@+id/roundImageCropFragment"
+        android:name="com.wedo8020.app.imagecroper.RoundImageCropFragment"
+        android:label="RoundImageCropFragment" />
+    <fragment
+        android:id="@+id/thumbNailFragment"
+        android:name="com.wedo8020.app.mainui.home.createpost.ThumbNailFragment"
+        android:label="ThumbNailFragment" >
+        <action
+            android:id="@+id/action_thumbNailFragment_to_previewFragment"
+            app:destination="@id/previewFragment" />
+
+        <action
+            android:id="@+id/action_thumbNailFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.wedo8020.app.mainui.home.createpost.PreviewFragment"
+        android:label="PreviewFragment" >
+        <action
+            android:id="@+id/action_previewFragment_to_thumbNailFragment"
+            app:destination="@id/thumbNailFragment" />
+        <action
+            android:id="@+id/action_previewFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment"
+            app:popUpTo="@+id/previewFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.wedo8020.app.mainui.home.createpost.CreatePostFragment"
+        android:label="CreatePostFragment" >
+
+        <action
+            android:id="@+id/action_createPostFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_createPostFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment"
+            app:popUpTo="@+id/createPostFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_createPostFragment_to_thumbNailFragment"
+            app:destination="@id/thumbNailFragment" />
+        <action
+            android:id="@+id/action_createPostFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:popUpTo="@+id/createPostFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/buySrcFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.BuySrcFragment"
+        android:label="fragment_buy_src"
+        tools:layout="@layout/fragment_buy_src" >
+        <action
+            android:id="@+id/action_buySrcFragment_to_buySrcInfo"
+            app:destination="@id/buySrcInfo" />
+    </fragment>
+
+<!--    <fragment
+        android:id="@+id/plantTreesFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.PlantTreesFragment"
+        android:label="fragment_plant_trees"
+        tools:layout="@layout/fragment_plant_trees" >
+        <action
+            android:id="@+id/action_plantTreesFragment_to_plantTreesInfo"
+            app:destination="@id/plantTreesInfo" />
+        <action
+            android:id="@+id/action_plantTreesFragment_to_inApp"
+            app:destination="@id/inApp" />
+        <action
+            android:id="@+id/action_plantTreesFragment_to_specificCountryTreePlanting"
+            app:destination="@id/specificCountryTreePlanting" />
+    </fragment>-->
+    <fragment
+        android:id="@+id/buySrcInfo"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.BuySrcInfo"
+        android:label="fragment_buy_src_info"
+        tools:layout="@layout/fragment_buy_src_info" />
+    <fragment
+        android:id="@+id/plantTreesInfo"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.PlantTreesInfo"
+        android:label="fragment_plant_trees_info"
+        tools:layout="@layout/fragment_plant_trees_info" />
+    <dialog
+        android:id="@+id/aiFeatureInfo"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.AiFeatureInfo"
+        android:label="fragment_ai_feature_info"
+        tools:layout="@layout/fragment_ai_feature_info" />
+    <dialog
+        android:id="@+id/blueTickInfo"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.BlueTickInfo"
+        android:label="fragment_blue_tick_info"
+        tools:layout="@layout/fragment_blue_tick_info" />
+    <dialog
+        android:id="@+id/noAdsInfo"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.NoAdsInfo"
+        android:label="NoAdsInfo" />
+    <activity
+        android:id="@+id/inApp"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.InApp"
+        android:label="activity_in_app"
+        tools:layout="@layout/activity_in_app" />
+    <fragment
+        android:id="@+id/premiumPurchaseFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.PremiumPurchaseFragment"
+        android:label="fragment_premium_purchase"
+        tools:layout="@layout/fragment_premium_purchase" >
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_aiFeatureInfo"
+            app:destination="@id/aiFeatureInfo" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_blueTickInfo"
+            app:destination="@id/blueTickInfo" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_noAdsInfo"
+            app:destination="@id/noAdsInfo" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_mostTreesPlantedIndividual"
+            app:destination="@id/mostTreesPlantedIndividual" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_mostTreesPlantedIndividual2"
+            app:destination="@id/mostTreesPlantedIndividual" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_self"
+            app:destination="@id/premiumPurchaseFragment" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_mostTreesPlantedFragment"
+            app:destination="@id/mostTreesPlantedFragment" />
+        <action
+            android:id="@+id/action_premiumPurchaseFragment_to_mostTreesPlantedBusiness"
+            app:destination="@id/mostTreesPlantedBusiness" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantTreesFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.PlantTreesFragment"
+        android:label="fragment_plant_trees"
+        tools:layout="@layout/fragment_plant_trees" >
+        <action
+            android:id="@+id/action_plantTreesFragment_to_plantTreesInfo"
+            app:destination="@id/plantTreesInfo" />
+        <action
+            android:id="@+id/action_plantTreesFragment_to_inApp"
+            app:destination="@id/inApp" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/downLoadMyDataFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.DownLoadMyDataFragment"
+        android:label="DownLoadMyDataFragment" />
+    <fragment
+        android:id="@+id/userExperienceFragment"
+        android:name="com.wedo8020.app.mainui.home.profilesetting.UserExperienceFragment"
+        android:label="UserExperienceFragment" >
+        <action
+            android:id="@+id/action_userExperienceFragment_to_profileSettingsFragment"
+            app:destination="@id/profileSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeGivenAndReceiveFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.likeGivenAndReceive.LikeGivenAndReceiveFragment"
+        android:label="LikeGivenAndReceiveFragment" >
+        <action
+            android:id="@+id/action_likeGivenAndReceiveFragment_to_givenLikeListFragment"
+            app:destination="@id/givenLikeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/givenLikeListFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.likeGivenAndReceive.GivenLikeListFragment"
+        android:label="GivenLikeListFragment" />
+    <fragment
+        android:id="@+id/receiveListFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.likeGivenAndReceive.ReceiveListFragment"
+        android:label="ReceiveListFragment" />
+    <fragment
+        android:id="@+id/friendFollowerFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.friendFollowerFollowing.FriendFollowerFragment"
+        android:label="FriendFollowerFragment" />
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.wedo8020.app.mainui.home.createpost.PermissionFragment"
+        android:label="PermissionFragment" />
+    <fragment
+        android:id="@+id/specificCountryTreePlanting"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.SpecificCountryTreePlanting"
+        android:label="fragment_specific_country_tree_planting"
+        tools:layout="@layout/fragment_specific_country_tree_planting" />
+    <fragment
+        android:id="@+id/showProfileFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.ShowProfileFragment"
+        android:label="ShowProfileFragment" />
+    <fragment
+        android:id="@+id/follower_following_fragment"
+        android:name="com.wedo8020.app.mainui.home.otherUser.FollowerFollowingFragment"
+        android:label="follower_following_fragment"
+        tools:layout="@layout/fragment_follower_following"/>
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.WalletFragment"
+        android:label="WalletFragment" >
+        <action
+            android:id="@+id/action_walletFragment_to_transferSrcFragment"
+            app:destination="@id/transferSrcFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferSrcFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.TransferSrcFragment"
+        android:label="TransferSrcFragment" />
+    <dialog
+        android:id="@+id/switchAccountFragment"
+        android:name="com.wedo8020.app.mainui.login.switchaccounts.SwitchAccountFragment"
+        android:label="SwitchAccountFragment" >
+        <action
+            android:id="@+id/action_switchAccountFragment_to_loginSignUpFragment2"
+            app:destination="@id/loginSignUpFragment2" />
+        <action
+            android:id="@+id/action_switchAccountFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </dialog>
+    <fragment
+        android:id="@+id/messageAndNotificationsFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.MessageAndNotificationsFragment"
+        android:label="MessageAndNotificationsFragment" >
+        <action
+            android:id="@+id/action_messageAndNotificationsFragment_to_requestSentAndReceiveFragment"
+            app:destination="@id/requestSentAndReceiveFragment" />
+        <action
+            android:id="@+id/action_messageAndNotificationsFragment_to_showChatFragment"
+            app:destination="@id/showChatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/show_profile_post_fragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.ShowProfilePostFragment"
+        android:label="show_profile_post_fragment"
+        tools:layout="@layout/fragment_show_profile_post">
+        <action
+            android:id="@+id/action_show_profile_post_fragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_other_post_fragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_other_post_fragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_other_post_fragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
+        <action
+            android:id="@+id/action_other_post_fragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_other_post_fragment_to_permissionFragment"
+            app:destination="@id/permissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestSentAndReceiveFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.requestSentReceive.RequestSentAndReceiveFragment"
+        android:label="RequestSentAndReceiveFragment" />
+    <fragment
+        android:id="@+id/showChatFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.chat.ShowChatFragment"
+        android:label="fragment_show_chat"
+        tools:layout="@layout/fragment_show_chat" >
+        <action
+            android:id="@+id/action_showChatFragment_to_selectedImageAndVideoFragment"
+            app:destination="@id/selectedImageAndVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mostLikedFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.MostLikedFragment"
+        android:label="MostLikedFragment" >
+        <action
+            android:id="@+id/action_mostLikedFragment_to_otherprofileFragment"
+            app:destination="@id/otherProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+        <action
+            android:id="@+id/action_mostLikedFragment_to_show_profile_post_fragment"
+            app:destination="@id/show_profile_post_fragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/mostTreesPlantedFragment"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.MostTreesPlantedFragment"
+        android:label="MostTreesPlantedFragment" >
+        <action
+            android:id="@+id/action_mostTreesPlantedFragment_to_otherprofileFragment"
+            app:destination="@id/otherProfileFragment"
+            app:enterAnim="@anim/custom_enter_animation"
+            app:exitAnim="@anim/custom_exit_anim"
+            app:popEnterAnim="@anim/custom_pop_enter_anim"
+            app:popExitAnim="@anim/custom_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/mostTreesPlantedIndividual"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.MostTreesPlantedIndividual"
+        android:label="MostTreesPlantedIndividual" />
+    <fragment
+        android:id="@+id/mostTreesPlantedBusiness"
+        android:name="com.wedo8020.app.mainui.home.exchangescreen.MostTreesPlantedBusiness"
+        android:label="MostTreesPlantedBusiness" />
+    <fragment
+        android:id="@+id/selectedImageAndVideoFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.chat.SelectedImageAndVideoFragment"
+        android:label="SelectedImageAndVideoFragment" />
+    <fragment
+        android:id="@+id/loginSignUpFragment2"
+        android:name="com.wedo8020.app.mainui.login.LoginSignUpFragment"
+        android:label="LoginSignUpFragment" />
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.wedo8020.app.mainui.login.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/receiveRequestFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.requestSentReceive.ReceiveRequestFragment"
+        android:label="ReceiveRequestFragment" >
+        <action
+            android:id="@+id/action_receiveRequestFragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment" />
+        <action
+            android:id="@+id/action_receiveRequestFragment_to_otherProfileFragment2"
+            app:destination="@id/otherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sentRequestFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.requestSentReceive.SentRequestFragment"
+        android:label="SentRequestFragment" >
+        <action
+            android:id="@+id/action_sentRequestFragment_to_otherProfileFragment"
+            app:destination="@id/otherProfileFragment" />
+        <action
+            android:id="@+id/action_sentRequestFragment_to_otherProfileFragment2"
+            app:destination="@id/otherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageUserListFragment"
+        android:name="com.wedo8020.app.mainui.home.chatAndNotification.chat.MessageUserListFragment"
+        android:label="MessageUserListFragment" />
+    <fragment
+        android:id="@+id/linkedAccountFragment"
+        android:name="com.wedo8020.app.mainui.home.profiletab.linkedAccount.LinkedAccountFragment"
+        android:label="LinkedAccountFragment" />
+</navigation>

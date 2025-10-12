@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="Dimblack">#AB1B1B1B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteBlur">#1AFFFFFF</color>
+    <color name="white2">#EBF1EEEE</color>
+    <color name="white3">#EBF1EEEE</color>
+    <color name="white4">#EBFFFFFF</color>
+    <color name="pureBlack">#000000</color>
+    <color name="blurColor">#1A000000</color>
+
+    <color name="lightblack">#AE131313</color>
+    <color name="card_notification_color">#E8000000</color>
+
+    <color name="pureWhite">#FFFFFF</color>
+    <color name="lightblack2">#505050</color>
+    <color name="appBlue">#2E94D2</color>
+    <color name="Blue">#009FFF</color>
+    <color name="unselectedColor">#A9A9A9</color>
+<!--    <color name="tabUnselected">#C8C8C8</color>-->
+    <color name="tabUnselected">#8D8D8D</color>
+    <color name="PureGrey">#A9A9A9</color>
+    <color name="shimmer_item_color">#ffffff</color>
+    <color name="unselectedTabColor">#DEDEDE</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparentBlack">#2A090808</color>
+    <color name="LightBlack">#1D1D1D</color>
+    <color name="Grey">#A9A9A9</color>
+    <color name="Grey3">#605A5A</color>
+    <color name="GreyLight">#EFEFEF</color>
+    <color name="Grey2">#EFEFEF</color>
+    <color name="LightGrey">#A5A5A5</color>
+    <color name="LightGreyText">#A9A9A9</color>
+    <color name="RedColor">#FF0340</color>
+    <color name="DarkColor">#F00</color>
+    <color name="LightGrey1">#66493E3E</color>
+
+    <color name="LightRedBlocked">#EF094E</color>
+    <color name="GreyPasswordColor">#A6A6A6</color>
+    <color name="bottomsheet_bg_color">#242424</color>
+    <color name="imageBackground">#26434343</color>
+<!--    <color name="yellow">#FFD700</color>-->
+    <color name="green">#0AB210</color>
+    <color name="semi_transparent">#99000000</color>
+    <color name="background_color">#1D1D1D</color>
+
+    <color name="progressBackgroundColor">#66CCCCCC</color> <!-- Example background color -->
+    <color name="progressColor">#CCCCCC</color> <!-- Example progress color -->
+
+
+
+</resources>

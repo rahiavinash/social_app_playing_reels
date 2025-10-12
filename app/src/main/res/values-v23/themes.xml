@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.WeDo80" parent="Base.Base.Theme.WeDo80">
+        <!-- Transparent system bars for edge-to-edge. -->
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="AppTheme_BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+    </style>
+</resources>

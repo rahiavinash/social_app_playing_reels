@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clProfileCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_156sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:background="@color/Grey"
+            app:cardBackgroundColor="@color/white2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/Grey"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="#e6e6e6">
+
+                <ImageView
+                    android:id="@+id/ivPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Grey"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/ivImageIcon"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:src="@drawable/ic_uploading_image"
+            android:tint="@color/white2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/clProfileCardView"
+            app:layout_constraintTop_toTopOf="@+id/clProfileCardView" />
+        <!--   <ImageView
+               android:id="@+id/ivMultipleImage"
+               android:layout_width="@dimen/_15sdp"
+               android:layout_height="@dimen/_15sdp"
+               android:layout_marginTop="@dimen/_5sdp"
+               android:layout_marginEnd="@dimen/_7sdp"
+               android:tint="@color/white"
+               android:visibility="gone"
+               android:src="@drawable/ic_multiimage"
+               app:layout_constraintEnd_toEndOf="@+id/clProfileCardView"
+               app:layout_constraintTop_toTopOf="@+id/clProfileCardView" />-->
+        <ImageView
+            android:id="@+id/ivPPin"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/ic_pin"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/clProfileCardView" />
+
+
+        <ImageView
+            android:id="@+id/ivPlay"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:src="@drawable/ic_homepauseicon"
+            app:layout_constraintBottom_toBottomOf="@+id/clProfileCardView"
+            app:layout_constraintStart_toStartOf="@+id/clProfileCardView" />
+
+        <TextView
+            android:id="@+id/playCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/clProfileCardView"
+            app:layout_constraintStart_toEndOf="@+id/ivPlay"
+            app:layout_constraintTop_toTopOf="@+id/ivPlay" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLongClick"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clProfileCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivRoundPin"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/ic_round_pin"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_pin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivRoundUnPin"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/ic_round_pin"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_unpinwhite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivRoundEdit"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:background="@drawable/ic_round_pin"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivRoundDelete"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/ic_round_pin"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivRoundArchive"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/ic_round_pin"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_archive"
+                android:tint="@color/white2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivRoundUnArchive"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/ic_round_pin"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_unarchive"
+                app:tint="@color/white2"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

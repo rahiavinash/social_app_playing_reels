@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+ android:background="@color/LightBlack"
+        tools:context=".imagecroper.RoundImageCropFragment">
+
+        <ImageView
+            android:id="@+id/IvBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_9sdp"
+            android:paddingBottom="@dimen/_9sdp"
+            android:src="@drawable/ic_back_arrow_white"
+            app:layout_constraintBottom_toTopOf="@+id/clProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Move / Zoom"
+            android:textColor="@color/lightblack"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/clProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_300sdp"
+            android:background="@color/LightBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_19sdp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:cardCornerRadius="290dp"
+                app:cardElevation="0dp"
+                android:background="@color/LightBlack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/LightBlack"
+                    app:cardCornerRadius="290dp"
+                    app:cardElevation="0dp">
+
+                    <com.otaliastudios.zoom.ZoomLayout
+                        android:id="@+id/cardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical|horizontal"
+                        app:alignment="center"
+                        android:background="@color/black"
+                        app:animationDuration="280"
+                        app:flingEnabled="true"
+                        app:hasClickableChildren="false"
+                        app:horizontalPanEnabled="true"
+                        app:maxZoom="10"
+                        app:maxZoomType="zoom"
+                        app:minZoom="1"
+                        app:minZoomType="zoom"
+                        app:oneFingerScrollEnabled="true"
+                        app:overPinchable="true"
+                        app:overScrollHorizontal="true"
+                        app:overScrollVertical="true"
+                        app:scrollEnabled="true"
+                        app:threeFingersScrollEnabled="true"
+                        app:transformation="centerInside"
+                        app:transformationGravity="auto"
+                        app:twoFingersScrollEnabled="true"
+                        app:verticalPanEnabled="true"
+                        app:zoomEnabled="true">
+
+                        <ImageView
+                            android:id="@+id/ivUserProfileImage"
+                            android:layout_width="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_height="match_parent"
+                            android:background="@color/LightBlack"
+                            android:scaleType="fitXY" />
+
+                    </com.otaliastudios.zoom.ZoomLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ivUserProfileImage3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/imageBackground"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/blue_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Done"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
