@@ -1,6 +1,6 @@
 # Project Name
 
-WeDo 80
+social playing reels app like instagram
 
 Join our purpose-driven social media application, WeDo 80, where users come together to create and share videos and photos. Our mission is to make a positive impact on the world by allocating 80% of our profits towards fighting climate change and poverty.
 Additionally, 10% of our profits go towards rewarding content creators and our valuable app users through exciting competitions and prizes for the most liked content and creators each month. This commitment is deeply embedded in our company constitution.
